@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!-- Wheel height properties -->
+<!--	<xacro:property name="drive_wheel_height" value="-0.1775"/>-->
+	<xacro:property name="drive_wheel_height" value="-0.177505"/>
+	<xacro:property name="support_wheel_height" value="-0.2252"/>
+
+	<xacro:macro name="Chassis">
+
+		<!-- Base Link -->
+		<link name="base_footprint"/>
+
+		<!-- Chassis Base Joint -->
+		<joint name="base_footprint_joint" type="fixed">
+			<parent link="base_footprint"/>
+			<child link="base_link"/>
+			<origin xyz="0.04 0 0.265"/>
+		</joint>
+
+		<!-- Chassis Base Link -->
+		<link name="base_link">
+			<inertial>
+				<origin xyz="-0.027237 -0.00044706 -0.13065"/>
+				<mass value="18.789"/>
+				<inertia
+						ixx="0.32103"
+						ixy="-0.00088596"
+						ixz="0.0070426"
+						iyy="0.35279"
+						iyz="0.00010881"
+						izz="0.63543"/>
+			</inertial>
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find fiveages_w1_description)/meshes/chassis/base.obj"/>
+				</geometry>
+			</visual>
+			<collision>
+				<origin xyz="0.1806 0.1873 ${support_wheel_height}"/>
+				<geometry>
+					<sphere radius="0.0365"/>
+				</geometry>
+			</collision>
+			<collision>
+				<origin xyz="0.1806 -0.1873 ${support_wheel_height}"/>
+				<geometry>
+					<sphere radius="0.0365"/>
+				</geometry>
+			</collision>
+			<collision>
+				<origin xyz="-0.2423 0.1873 ${support_wheel_height}"/>
+				<geometry>
+					<sphere radius="0.0365"/>
+				</geometry>
+			</collision>
+			<collision>
+				<origin xyz="-0.2423 -0.1873 ${support_wheel_height}"/>
+				<geometry>
+					<sphere radius="0.0365"/>
+				</geometry>
+			</collision>
+
+			<collision>
+				<origin xyz="-0.04 0 -0.1"/>
+				<geometry>
+					<box size=".66 .55 .2"/>
+				</geometry>
+			</collision>
+		</link>
+
+		<!-- Left Wheel Link -->
+		<link name="chassis_left_Link">
+			<inertial>
+				<origin xyz="4.996E-16 0.033322 0"/>
+				<mass value="2.8637"/>
+				<inertia
+						ixx="0.0051541"
+						ixy="-3.3608E-17"
+						ixz="-1.1703E-17"
+						iyy="0.0090798"
+						iyz="-5.0051E-18"
+						izz="0.0051541"/>
+			</inertial>
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find fiveages_w1_description)/meshes/chassis/wheel.obj"/>
+				</geometry>
+			</visual>
+			<collision>
+				<origin rpy="1.5708 0 0" xyz="0 0.0321 0"/>
+				<geometry>
+					<cylinder radius="0.0842" length="0.038"/>
+				</geometry>
+			</collision>
+		</link>
+
+		<!-- Left Wheel Joint -->
+		<joint name="chassis_left_joint" type="continuous">
+			<origin xyz="-0.041 0.1846 ${drive_wheel_height}"/>
+			<parent link="base_link"/>
+			<child link="chassis_left_Link"/>
+			<axis xyz="0 1 0"/>
+		</joint>
+
+		<!-- Right Wheel Link -->
+		<link name="chassis_right_Link">
+			<inertial>
+				<origin xyz="-5.2736E-16 -0.033322 1.1102E-16"/>
+				<mass value="2.8637"/>
+				<inertia
+						ixx="0.0051541"
+						ixy="-3.3734E-17"
+						ixz="1.0772E-17"
+						iyy="0.0090798"
+						iyz="5.0454E-18"
+						izz="0.0051541"/>
+			</inertial>
+			<visual>
+				<geometry>
+					<mesh filename="file://$(find fiveages_w1_description)/meshes/chassis/wheel.obj" scale="1 -1 1"/>
+				</geometry>
+			</visual>
+			<collision>
+				<origin rpy="1.5708 0 0"  xyz="0 -0.0321 0"/>
+				<geometry>
+					<cylinder radius="0.0842" length="0.038"/>
+				</geometry>
+			</collision>
+		</link>
+
+		<!-- Right Wheel Joint -->
+		<joint name="chassis_right_joint" type="continuous">
+			<origin xyz="-0.041 -0.1846 ${drive_wheel_height}"/>
+			<parent link="base_link"/>
+			<child link="chassis_right_Link"/>
+			<axis xyz="0 1 0"/>
+		</joint>
+
+		<link name="scan"/>
+		<joint name="scan_link" type="fixed">
+			<parent link="base_footprint"/>
+			<child link="scan"/>
+			<origin xyz="0.28 0 0.2"/>
+		</joint>
+
+		<link name="chassis_camera"/>
+		<joint name="chassis_camera_joint" type="fixed">
+			<parent link="base_footprint"/>
+			<child link="chassis_camera"/>
+			<origin xyz="0.32 0 0.2285"/>
+		</joint>
+
+		<link name="imu"/>
+		<joint name="imu_link" type="fixed">
+			<parent link="base_footprint"/>
+			<child link="imu"/>
+			<origin xyz="0 0 0.11"/>
+		</joint>
+
+
+	</xacro:macro>
+</robot>

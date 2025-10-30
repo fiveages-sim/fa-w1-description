@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:macro name="Grippers">
+
+		<xacro:arg name="type" default="empty"/>
+
+		<xacro:if value="${'$(arg type)' == 'robotiq85'}">
+			<xacro:include filename="$(find robotiq_description)/xacro/2F85.xacro"/>
+			<xacro:Robotiq85 name="left"/>
+			<xacro:Robotiq85 name="right"/>
+
+			<joint name="left_gripper_base_joint" type="fixed">
+				<parent link="left_arm_link7"/>
+				<child link="left_gripper_base"/>
+			</joint>
+
+			<joint name="right_gripper_base_joint" type="fixed">
+				<parent link="right_arm_link7"/>
+				<child link="right_gripper_base"/>
+			</joint>
+		</xacro:if>
+
+		<xacro:if value="${'$(arg type)' == 'AG2F90-C'}">
+			<xacro:include filename="$(find changingtek_description)/xacro/AG2F90-C.xacro"/>
+			<xacro:AG2F90-C name="left"/>
+			<xacro:AG2F90-C name="right"/>
+			<joint name="left_gripper_base_joint" type="fixed">
+				<parent link="left_arm_link7"/>
+				<child link="left_gripper_base"/>
+			</joint>
+
+			<joint name="right_gripper_base_joint" type="fixed">
+				<parent link="right_arm_link7"/>
+				<child link="right_gripper_base"/>
+			</joint>
+		</xacro:if>
+
+		<xacro:if value="${'$(arg type)' == 'AG2F120S'}">
+			<xacro:include filename="$(find changingtek_description)/xacro/AG2F120S.xacro"/>
+			<xacro:AG2F120S name="left"/>
+			<xacro:AG2F120S name="right"/>
+			<joint name="left_gripper_base_joint" type="fixed">
+				<parent link="left_arm_link7"/>
+				<child link="left_gripper_base"/>
+			</joint>
+
+			<joint name="right_gripper_base_joint" type="fixed">
+				<parent link="right_arm_link7"/>
+				<child link="right_gripper_base"/>
+			</joint>
+		</xacro:if>
+
+	</xacro:macro>
+</robot>
