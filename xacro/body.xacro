@@ -194,7 +194,7 @@
 		</link>
 
 		<joint name="head_joint1" type="revolute">
-			<origin xyz="-0.026 0 0.487"/>
+			<origin xyz="-0.02258 0 0.485317"/>
 			<parent link="body_link4"/>
 			<child link="head_link1"/>
 			<axis xyz="0 0 1"/>
@@ -227,7 +227,7 @@
 		</link>
 
 		<joint name="head_joint2" type="revolute">
-			<origin xyz="0 0.0243 0.041"/>
+			<origin xyz="0 0 0.033543"/>
 			<parent link="head_link1"/>
 			<child link="head_link2"/>
 			<axis xyz="0 -1 0"/>
