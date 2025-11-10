@@ -25,12 +25,106 @@
       </geometry>
     </visual>
     <collision>
+      <origin xyz="0.1806 0.1873 -0.2252"/>
+      <geometry>
+        <sphere radius="0.0365"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.1806 -0.1873 -0.2252"/>
+      <geometry>
+        <sphere radius="0.0365"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.2423 0.1873 -0.2252"/>
+      <geometry>
+        <sphere radius="0.0365"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.2423 -0.1873 -0.2252"/>
+      <geometry>
+        <sphere radius="0.0365"/>
+      </geometry>
+    </collision>
+    <collision>
       <origin xyz="-0.04 0 -0.1"/>
       <geometry>
         <box size=".66 .55 .2"/>
       </geometry>
     </collision>
   </link>
+  <!-- Left Wheel Link -->
+  <link name="chassis_left_Link">
+    <inertial>
+      <origin xyz="4.996E-16 0.033322 0"/>
+      <mass value="2.8637"/>
+      <inertia ixx="0.0051541" ixy="-3.3608E-17" ixz="-1.1703E-17" iyy="0.0090798" iyz="-5.0051E-18" izz="0.0051541"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://fiveages_w1_description/meshes/chassis/wheel.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0" xyz="0 0.0321 0"/>
+      <geometry>
+        <cylinder length="0.038" radius="0.0842"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Left Wheel Joint -->
+  <joint name="chassis_left_joint" type="continuous">
+    <origin xyz="-0.041 0.1846 -0.177505"/>
+    <parent link="base_link"/>
+    <child link="chassis_left_Link"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <!-- Right Wheel Link -->
+  <link name="chassis_right_Link">
+    <inertial>
+      <origin xyz="-5.2736E-16 -0.033322 1.1102E-16"/>
+      <mass value="2.8637"/>
+      <inertia ixx="0.0051541" ixy="-3.3734E-17" ixz="1.0772E-17" iyy="0.0090798" iyz="5.0454E-18" izz="0.0051541"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://fiveages_w1_description/meshes/chassis/wheel.obj" scale="1 -1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0" xyz="0 -0.0321 0"/>
+      <geometry>
+        <cylinder length="0.038" radius="0.0842"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Right Wheel Joint -->
+  <joint name="chassis_right_joint" type="continuous">
+    <origin xyz="-0.041 -0.1846 -0.177505"/>
+    <parent link="base_link"/>
+    <child link="chassis_right_Link"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="scan"/>
+  <joint name="scan_link" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="scan"/>
+    <origin xyz="0.28 0 0.2"/>
+  </joint>
+  <link name="chassis_camera"/>
+  <joint name="chassis_camera_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="chassis_camera"/>
+    <origin xyz="0.32 0 0.2285"/>
+  </joint>
+  <link name="imu"/>
+  <joint name="imu_link" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="imu"/>
+    <origin xyz="0 0 0.11"/>
+  </joint>
   <!-- Trunk Base Link -->
   <link name="trunk_base_link">
     <inertial>
@@ -175,7 +269,7 @@
     </collision>
   </link>
   <joint name="head_joint1" type="revolute">
-    <origin xyz="-0.026 0 0.487"/>
+    <origin xyz="-0.02258 0 0.485317"/>
     <parent link="body_link4"/>
     <child link="head_link1"/>
     <axis xyz="0 0 1"/>
@@ -200,21 +294,25 @@
     </collision>
   </link>
   <joint name="head_joint2" type="revolute">
-    <origin xyz="0 0.0243 0.041"/>
+    <origin xyz="0 0 0.033543"/>
     <parent link="head_link1"/>
     <child link="head_link2"/>
     <axis xyz="0 -1 0"/>
     <limit effort="15" lower="-1.57" upper="1.57" velocity="15"/>
     <dynamics damping="0.01" friction="0.1"/>
   </joint>
-  <!-- Arm Mount Joint -->
   <joint name="left_arm_mount" type="fixed">
     <parent link="body_link4"/>
-    <child link="left_arm_base"/>
+    <child link="left_base_link"/>
     <origin rpy="-1.57 1.57 0" xyz="0.0 0.12 0.41"/>
   </joint>
+  <joint name="right_arm_mount" type="fixed">
+    <parent link="body_link4"/>
+    <child link="right_base_link"/>
+    <origin rpy="1.57 1.57 0" xyz="0.0 -0.12 0.41"/>
+  </joint>
   <!-- Arm Base Link -->
-  <link name="left_arm_base">
+  <link name="left_base_link">
     <inertial>
       <mass value="2.4"/>
       <inertia ixx="0.00397965" ixy="0.00000303" ixz="0.00000035" iyy="0.00315361" iyz="0.00002442" izz="0.00357979"/>
@@ -222,25 +320,25 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/base.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/base.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 1 -->
   <joint name="left_joint1" type="revolute">
-    <parent link="left_arm_base"/>
-    <child link="left_arm_link1"/>
+    <parent link="left_base_link"/>
+    <child link="left_link1"/>
     <limit effort="108" lower="-3.1414" upper="3.1414" velocity="3.9269908169872414"/>
     <axis xyz="0 0 1"/>
-    <origin rpy="0 0 1.5708" xyz="0.0 0.0 0.1745"/>
+    <origin rpy="0 0 -3.14159" xyz="0.0 0.0 0.1745"/>
   </joint>
   <!-- Arm Link 1 -->
-  <link name="left_arm_link1">
+  <link name="left_link1">
     <inertial>
       <mass value="2.4"/>
       <inertia ixx="0.00397965" ixy="0.00000303" ixz="0.00000035" iyy="0.00315361" iyz="0.00002442" izz="0.00357979"/>
@@ -248,24 +346,24 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link1.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link1.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 2 -->
   <joint name="left_joint2" type="revolute">
-    <parent link="left_arm_link1"/>
-    <child link="left_arm_link2"/>
+    <parent link="left_link1"/>
+    <child link="left_link2"/>
     <limit effort="108" lower="-2.1293" upper="2.1293" velocity="3.9269908169872414"/>
     <axis xyz="0 -1 0"/>
   </joint>
   <!-- Arm Link 2 -->
-  <link name="left_arm_link2">
+  <link name="left_link2">
     <inertial>
       <mass value="2.26"/>
       <inertia ixx="0.00998456" ixy="0.00000011" ixz="-0.00000049" iyy="0.00864243" iyz="0.00070944" izz="0.00397909"/>
@@ -273,25 +371,25 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link2.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link2.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 3 -->
   <joint name="left_joint3" type="revolute">
-    <parent link="left_arm_link2"/>
-    <child link="left_arm_link3"/>
+    <parent link="left_link2"/>
+    <child link="left_link3"/>
     <limit effort="66" lower="-3.1416" upper="3.1416" velocity="5.235987755982989"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 3.1415926535" xyz="0.0 0.0 0.305"/>
   </joint>
   <!-- Arm Link 3 -->
-  <link name="left_arm_link3">
+  <link name="left_link3">
     <inertial>
       <mass value="1.85"/>
       <inertia ixx="0.00514901" ixy="0.00000705" ixz="0.00033523" iyy="0.00455840" iyz="0.00005313" izz="0.00249866"/>
@@ -299,25 +397,25 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link3.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link3.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 4 -->
   <joint name="left_joint4" type="revolute">
-    <parent link="left_arm_link3"/>
-    <child link="left_arm_link4"/>
+    <parent link="left_link3"/>
+    <child link="left_link4"/>
     <limit effort="66" lower="-1.3963" upper="2.5307" velocity="5.235987755982989"/>
     <axis xyz="0 1 0"/>
     <origin xyz="0.01 0.0 0.0"/>
   </joint>
   <!-- Arm Link 4 -->
-  <link name="left_arm_link4">
+  <link name="left_link4">
     <inertial>
       <mass value="1.19"/>
       <inertia ixx="0.00358515" ixy="-0.00005009" ixz="-0.00016645" iyy="0.00288820" iyz="0.00041392" izz="0.00173347"/>
@@ -325,25 +423,25 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link4.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link4.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 5 -->
   <joint name="left_joint5" type="revolute">
-    <parent link="left_arm_link4"/>
-    <child link="left_arm_link5"/>
+    <parent link="left_link4"/>
+    <child link="left_link5"/>
     <limit effort="19" lower="-3.1416" upper="3.1416" velocity="4.1887902047863905"/>
     <axis xyz="0 0 1"/>
     <origin xyz="-0.01 0.0 0.179"/>
   </joint>
   <!-- Arm Link 5 -->
-  <link name="left_arm_link5">
+  <link name="left_link5">
     <inertial>
       <mass value="0.95"/>
       <inertia ixx="0.00094370" ixy="0.00000057" ixz="0.00000060" iyy="0.00071483" iyz="0.00000919" izz="0.00086730"/>
@@ -351,24 +449,24 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link5.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link5.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 6 -->
   <joint name="left_joint6" type="revolute">
-    <parent link="left_arm_link5"/>
-    <child link="left_arm_link6"/>
+    <parent link="left_link5"/>
+    <child link="left_link6"/>
     <limit effort="19" lower="-1.9722" upper="1.9722" velocity="4.1887902047863905"/>
     <axis xyz="0 1 0"/>
   </joint>
   <!-- Arm Link 6 -->
-  <link name="left_arm_link6">
+  <link name="left_link6">
     <inertial>
       <mass value="1.06"/>
       <inertia ixx="0.00230759" ixy="-0.00000067" ixz="0.00000072" iyy="0.00195677" iyz="0.00018711" izz="0.00103394"/>
@@ -376,25 +474,25 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link6.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link6.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 7 -->
   <joint name="left_joint7" type="revolute">
-    <parent link="left_arm_link6"/>
-    <child link="left_arm_link7"/>
+    <parent link="left_link6"/>
+    <child link="left_link7"/>
     <limit effort="19" lower="-3.1416" upper="3.1416" velocity="4.1887902047863905"/>
     <axis xyz="0 0 1"/>
     <origin xyz="0.0 0.0 0.166"/>
   </joint>
   <!-- Arm Link 7 -->
-  <link name="left_arm_link7">
+  <link name="left_link7">
     <inertial>
       <mass value="0.18"/>
       <inertia ixx="0.00009976" ixy="0.00000139" ixz="0.00000025" iyy="0.00009671" iyz="0.00000036" izz="0.00014828"/>
@@ -402,23 +500,17 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link7.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link7.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
-  <!-- Arm Mount Joint -->
-  <joint name="right_arm_mount" type="fixed">
-    <parent link="body_link4"/>
-    <child link="right_arm_base"/>
-    <origin rpy="1.57 1.57 0" xyz="0.0 -0.12 0.41"/>
-  </joint>
   <!-- Arm Base Link -->
-  <link name="right_arm_base">
+  <link name="right_base_link">
     <inertial>
       <mass value="2.4"/>
       <inertia ixx="0.00397965" ixy="0.00000303" ixz="0.00000035" iyy="0.00315361" iyz="0.00002442" izz="0.00357979"/>
@@ -426,25 +518,25 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/base.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/base.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 1 -->
   <joint name="right_joint1" type="revolute">
-    <parent link="right_arm_base"/>
-    <child link="right_arm_link1"/>
+    <parent link="right_base_link"/>
+    <child link="right_link1"/>
     <limit effort="108" lower="-3.1414" upper="3.1414" velocity="3.9269908169872414"/>
     <axis xyz="0 0 1"/>
-    <origin rpy="0 0 -1.5708" xyz="0.0 0.0 0.1745"/>
+    <origin rpy="0 0 -3.14159" xyz="0.0 0.0 0.1745"/>
   </joint>
   <!-- Arm Link 1 -->
-  <link name="right_arm_link1">
+  <link name="right_link1">
     <inertial>
       <mass value="2.4"/>
       <inertia ixx="0.00397965" ixy="0.00000303" ixz="0.00000035" iyy="0.00315361" iyz="0.00002442" izz="0.00357979"/>
@@ -452,24 +544,24 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link1.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link1.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 2 -->
   <joint name="right_joint2" type="revolute">
-    <parent link="right_arm_link1"/>
-    <child link="right_arm_link2"/>
+    <parent link="right_link1"/>
+    <child link="right_link2"/>
     <limit effort="108" lower="-2.1293" upper="2.1293" velocity="3.9269908169872414"/>
     <axis xyz="0 -1 0"/>
   </joint>
   <!-- Arm Link 2 -->
-  <link name="right_arm_link2">
+  <link name="right_link2">
     <inertial>
       <mass value="2.26"/>
       <inertia ixx="0.00998456" ixy="0.00000011" ixz="-0.00000049" iyy="0.00864243" iyz="0.00070944" izz="0.00397909"/>
@@ -477,25 +569,25 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link2.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link2.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 3 -->
   <joint name="right_joint3" type="revolute">
-    <parent link="right_arm_link2"/>
-    <child link="right_arm_link3"/>
+    <parent link="right_link2"/>
+    <child link="right_link3"/>
     <limit effort="66" lower="-3.1416" upper="3.1416" velocity="5.235987755982989"/>
     <axis xyz="0 0 1"/>
     <origin rpy="0 0 3.1415926535" xyz="0.0 0.0 0.305"/>
   </joint>
   <!-- Arm Link 3 -->
-  <link name="right_arm_link3">
+  <link name="right_link3">
     <inertial>
       <mass value="1.85"/>
       <inertia ixx="0.00514901" ixy="0.00000705" ixz="0.00033523" iyy="0.00455840" iyz="0.00005313" izz="0.00249866"/>
@@ -503,25 +595,25 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link3.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link3.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 4 -->
   <joint name="right_joint4" type="revolute">
-    <parent link="right_arm_link3"/>
-    <child link="right_arm_link4"/>
+    <parent link="right_link3"/>
+    <child link="right_link4"/>
     <limit effort="66" lower="-1.3963" upper="2.5307" velocity="5.235987755982989"/>
     <axis xyz="0 1 0"/>
     <origin xyz="0.01 0.0 0.0"/>
   </joint>
   <!-- Arm Link 4 -->
-  <link name="right_arm_link4">
+  <link name="right_link4">
     <inertial>
       <mass value="1.19"/>
       <inertia ixx="0.00358515" ixy="-0.00005009" ixz="-0.00016645" iyy="0.00288820" iyz="0.00041392" izz="0.00173347"/>
@@ -529,25 +621,25 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link4.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link4.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 5 -->
   <joint name="right_joint5" type="revolute">
-    <parent link="right_arm_link4"/>
-    <child link="right_arm_link5"/>
+    <parent link="right_link4"/>
+    <child link="right_link5"/>
     <limit effort="19" lower="-3.1416" upper="3.1416" velocity="4.1887902047863905"/>
     <axis xyz="0 0 1"/>
     <origin xyz="-0.01 0.0 0.179"/>
   </joint>
   <!-- Arm Link 5 -->
-  <link name="right_arm_link5">
+  <link name="right_link5">
     <inertial>
       <mass value="0.95"/>
       <inertia ixx="0.00094370" ixy="0.00000057" ixz="0.00000060" iyy="0.00071483" iyz="0.00000919" izz="0.00086730"/>
@@ -555,24 +647,24 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link5.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link5.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 6 -->
   <joint name="right_joint6" type="revolute">
-    <parent link="right_arm_link5"/>
-    <child link="right_arm_link6"/>
+    <parent link="right_link5"/>
+    <child link="right_link6"/>
     <limit effort="19" lower="-1.9722" upper="1.9722" velocity="4.1887902047863905"/>
     <axis xyz="0 1 0"/>
   </joint>
   <!-- Arm Link 6 -->
-  <link name="right_arm_link6">
+  <link name="right_link6">
     <inertial>
       <mass value="1.06"/>
       <inertia ixx="0.00230759" ixy="-0.00000067" ixz="0.00000072" iyy="0.00195677" iyz="0.00018711" izz="0.00103394"/>
@@ -580,25 +672,25 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link6.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link6.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
   <!-- Joint 7 -->
   <joint name="right_joint7" type="revolute">
-    <parent link="right_arm_link6"/>
-    <child link="right_arm_link7"/>
+    <parent link="right_link6"/>
+    <child link="right_link7"/>
     <limit effort="19" lower="-3.1416" upper="3.1416" velocity="4.1887902047863905"/>
     <axis xyz="0 0 1"/>
     <origin xyz="0.0 0.0 0.166"/>
   </joint>
   <!-- Arm Link 7 -->
-  <link name="right_arm_link7">
+  <link name="right_link7">
     <inertial>
       <mass value="0.18"/>
       <inertia ixx="0.00009976" ixy="0.00000139" ixz="0.00000025" iyy="0.00009671" iyz="0.00000036" izz="0.00014828"/>
@@ -606,12 +698,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link7.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/arm/link7.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>

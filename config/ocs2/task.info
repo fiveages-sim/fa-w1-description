@@ -6,13 +6,15 @@ model_information {
   removeJoints {
     [0]  "head_joint1"
     [1]  "head_joint2"
+    [2]  "chassis_left_joint"
+    [3]  "chassis_right_joint"
   }
 
   ; base frame of the robot (from URDF)
   baseFrame                       "base_footprint"
   ; end-effector frame of the robot (from URDF)
-  eeFrame                         "left_arm_link7"
-  eeFrame1                        "right_arm_link7"
+  eeFrame                         "left_link7"
+  eeFrame1                        "right_link7"
 }
 
 model_settings
@@ -229,8 +231,8 @@ bodyRelative
   pitchTolerance             0.1
   muRoll                     20.0
   muPitch                    20.0
-  muPositionX                0.0
-  muPositionY                0.0
+  muPositionX                0.5
+  muPositionY                0.5
 }
 
 selfCollision

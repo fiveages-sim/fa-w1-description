@@ -1,118 +1,118 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- Gazebo friction properties for chassis base -->
-  <gazebo reference="base_link">
-    <mu1>0.0</mu1>
-    <mu2>0.0</mu2>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <maxVel>10.0</maxVel>
-  </gazebo>
+    <!-- Gazebo friction properties for chassis base -->
+    <gazebo reference="base_link">
+        <mu1>0.0</mu1>
+        <mu2>0.0</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <maxVel>10.0</maxVel>
+    </gazebo>
 
-  <!-- Gazebo friction properties for left wheel -->
-  <gazebo reference="chassis_left_Link">
-    <mu1>1.0</mu1>
-    <mu2>1.0</mu2>
-    <minDepth>0.0001</minDepth>
-  </gazebo>
+    <!-- Gazebo friction properties for left wheel -->
+    <gazebo reference="chassis_left_Link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <minDepth>0.0001</minDepth>
+    </gazebo>
 
-  <!-- Gazebo friction properties for right wheel -->
-  <gazebo reference="chassis_right_Link">
-    <mu1>1.0</mu1>
-    <mu2>1.0</mu2>
-    <minDepth>0.0001</minDepth>
-  </gazebo>
+    <!-- Gazebo friction properties for right wheel -->
+    <gazebo reference="chassis_right_Link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <minDepth>0.0001</minDepth>
+    </gazebo>
 
-  <!-- 2D Lidar -->
-  <gazebo reference="scan">
-    <sensor name='laser_scan' type='gpu_lidar'>
-      <topic>scan</topic>
-      <update_rate>20</update_rate>
-      <gz_frame_id>scan</gz_frame_id>
-      <lidar>
-        <scan>
-          <horizontal>
-            <samples>360</samples>
-            <resolution>1.000000</resolution>
-            <min_angle>-1.9</min_angle>
-            <max_angle>1.9</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.10000</min>
-          <max>20</max>
-          <resolution>0.015000</resolution>
-        </range>
-      </lidar>
-      <always_on>true</always_on>
-      <visualize>true</visualize>
-    </sensor>
-  </gazebo>
+    <!-- 2D Lidar -->
+    <gazebo reference="scan">
+        <sensor name='laser_scan' type='gpu_lidar'>
+            <topic>scan</topic>
+            <update_rate>20</update_rate>
+            <gz_frame_id>scan</gz_frame_id>
+            <lidar>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <resolution>1.000000</resolution>
+                        <min_angle>-1.9</min_angle>
+                        <max_angle>1.9</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.10000</min>
+                    <max>20</max>
+                    <resolution>0.015000</resolution>
+                </range>
+            </lidar>
+            <always_on>true</always_on>
+            <visualize>true</visualize>
+        </sensor>
+    </gazebo>
 
-  <!-- IMU -->
-  <gazebo reference="imu">
-    <sensor name="imu" type="imu">
-      <always_on>1</always_on>
-      <update_rate>1000</update_rate>
-      <visualize>true</visualize>
-      <topic>imu</topic>
-      <gz_frame_id>imu</gz_frame_id>
-      <imu>
-        <angular_velocity>
-          <x>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-              <bias_mean>0.0000075</bias_mean>
-              <bias_stddev>0.0000008</bias_stddev>
-            </noise>
-          </x>
-          <y>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-              <bias_mean>0.0000075</bias_mean>
-              <bias_stddev>0.0000008</bias_stddev>
-            </noise>
-          </y>
-          <z>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-              <bias_mean>0.0000075</bias_mean>
-              <bias_stddev>0.0000008</bias_stddev>
-            </noise>
-          </z>
-        </angular_velocity>
-        <linear_acceleration>
-          <x>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-              <bias_mean>0.1</bias_mean>
-              <bias_stddev>0.001</bias_stddev>
-            </noise>
-          </x>
-          <y>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-              <bias_mean>0.1</bias_mean>
-              <bias_stddev>0.001</bias_stddev>
-            </noise>
-          </y>
-          <z>
-            <noise type="gaussian">
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-              <bias_mean>0.1</bias_mean>
-              <bias_stddev>0.001</bias_stddev>
-            </noise>
-          </z>
-        </linear_acceleration>
-      </imu>
-    </sensor>
-  </gazebo>
+    <!-- IMU -->
+    <gazebo reference="imu">
+        <sensor name="imu" type="imu">
+            <always_on>1</always_on>
+            <update_rate>1000</update_rate>
+            <visualize>true</visualize>
+            <topic>imu</topic>
+            <gz_frame_id>imu</gz_frame_id>
+            <imu>
+                <angular_velocity>
+                    <x>
+                        <noise type="gaussian">
+                            <mean>0.0</mean>
+                            <stddev>2e-4</stddev>
+                            <bias_mean>0.0000075</bias_mean>
+                            <bias_stddev>0.0000008</bias_stddev>
+                        </noise>
+                    </x>
+                    <y>
+                        <noise type="gaussian">
+                            <mean>0.0</mean>
+                            <stddev>2e-4</stddev>
+                            <bias_mean>0.0000075</bias_mean>
+                            <bias_stddev>0.0000008</bias_stddev>
+                        </noise>
+                    </y>
+                    <z>
+                        <noise type="gaussian">
+                            <mean>0.0</mean>
+                            <stddev>2e-4</stddev>
+                            <bias_mean>0.0000075</bias_mean>
+                            <bias_stddev>0.0000008</bias_stddev>
+                        </noise>
+                    </z>
+                </angular_velocity>
+                <linear_acceleration>
+                    <x>
+                        <noise type="gaussian">
+                            <mean>0.0</mean>
+                            <stddev>1.7e-2</stddev>
+                            <bias_mean>0.1</bias_mean>
+                            <bias_stddev>0.001</bias_stddev>
+                        </noise>
+                    </x>
+                    <y>
+                        <noise type="gaussian">
+                            <mean>0.0</mean>
+                            <stddev>1.7e-2</stddev>
+                            <bias_mean>0.1</bias_mean>
+                            <bias_stddev>0.001</bias_stddev>
+                        </noise>
+                    </y>
+                    <z>
+                        <noise type="gaussian">
+                            <mean>0.0</mean>
+                            <stddev>1.7e-2</stddev>
+                            <bias_mean>0.1</bias_mean>
+                            <bias_stddev>0.001</bias_stddev>
+                        </noise>
+                    </z>
+                </linear_acceleration>
+            </imu>
+        </sensor>
+    </gazebo>
 
 </robot>

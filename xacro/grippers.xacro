@@ -1,89 +1,89 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-	<xacro:macro name="Grippers">
+    <xacro:macro name="Grippers">
 
-		<xacro:arg name="type" default="empty"/>
+        <xacro:arg name="type" default="empty"/>
 
-		<xacro:if value="${'$(arg type)' == 'robotiq85'}">
-			<xacro:include filename="$(find robotiq_description)/xacro/2F85.xacro"/>
-			<xacro:Robotiq85 name="left"/>
-			<xacro:Robotiq85 name="right"/>
+        <xacro:if value="${'$(arg type)' == 'robotiq85'}">
+            <xacro:include filename="$(find robotiq_description)/xacro/2F85.xacro"/>
+            <xacro:Robotiq85 name="left"/>
+            <xacro:Robotiq85 name="right"/>
 
-			<joint name="left_gripper_base_joint" type="fixed">
-				<parent link="left_arm_link7"/>
-				<child link="left_gripper_base"/>
-			</joint>
+            <joint name="left_gripper_base_joint" type="fixed">
+                <parent link="left_arm_link7"/>
+                <child link="left_gripper_base"/>
+            </joint>
 
-			<joint name="right_gripper_base_joint" type="fixed">
-				<parent link="right_arm_link7"/>
-				<child link="right_gripper_base"/>
-			</joint>
-		</xacro:if>
+            <joint name="right_gripper_base_joint" type="fixed">
+                <parent link="right_arm_link7"/>
+                <child link="right_gripper_base"/>
+            </joint>
+        </xacro:if>
 
-		<xacro:if value="${'$(arg type)' == 'AG2F90-C'}">
-			<xacro:include filename="$(find changingtek_description)/xacro/AG2F90-C.xacro"/>
-			<xacro:AG2F90-C name="left"/>
-			<xacro:AG2F90-C name="right"/>
-			<joint name="left_gripper_base_joint" type="fixed">
-				<parent link="left_arm_link7"/>
-				<child link="left_gripper_base"/>
-			</joint>
+        <xacro:if value="${'$(arg type)' == 'AG2F90-C'}">
+            <xacro:include filename="$(find changingtek_description)/xacro/AG2F90-C.xacro"/>
+            <xacro:AG2F90-C name="left"/>
+            <xacro:AG2F90-C name="right"/>
+            <joint name="left_gripper_base_joint" type="fixed">
+                <parent link="left_arm_link7"/>
+                <child link="left_gripper_base"/>
+            </joint>
 
-			<joint name="right_gripper_base_joint" type="fixed">
-				<parent link="right_arm_link7"/>
-				<child link="right_gripper_base"/>
-			</joint>
-		</xacro:if>
+            <joint name="right_gripper_base_joint" type="fixed">
+                <parent link="right_arm_link7"/>
+                <child link="right_gripper_base"/>
+            </joint>
+        </xacro:if>
 
-		<xacro:if value="${'$(arg type)' == 'AG2F120S'}">
-			<xacro:include filename="$(find changingtek_description)/xacro/AG2F120S.xacro"/>
-			<xacro:AG2F120S name="left"/>
-			<xacro:AG2F120S name="right"/>
-			<joint name="left_gripper_base_joint" type="fixed">
-				<parent link="left_arm_link7"/>
-				<child link="left_gripper_base"/>
-			</joint>
+        <xacro:if value="${'$(arg type)' == 'AG2F120S'}">
+            <xacro:include filename="$(find changingtek_description)/xacro/AG2F120S.xacro"/>
+            <xacro:AG2F120S name="left"/>
+            <xacro:AG2F120S name="right"/>
+            <joint name="left_gripper_base_joint" type="fixed">
+                <parent link="left_arm_link7"/>
+                <child link="left_gripper_base"/>
+            </joint>
 
-			<joint name="right_gripper_base_joint" type="fixed">
-				<parent link="right_arm_link7"/>
-				<child link="right_gripper_base"/>
-			</joint>
-		</xacro:if>
+            <joint name="right_gripper_base_joint" type="fixed">
+                <parent link="right_arm_link7"/>
+                <child link="right_gripper_base"/>
+            </joint>
+        </xacro:if>
 
-		<xacro:if value="${'$(arg type)' == 'jodell-rg75'}">
-			<xacro:include filename="$(find jodell_description)/xacro/RG75-300.xacro"/>
-			<xacro:RG75-300 name="left" use_flange="true"/>
-			<xacro:RG75-300 name="right" use_flange="true"/>
+        <xacro:if value="${'$(arg type)' == 'jodell-rg75'}">
+            <xacro:include filename="$(find jodell_description)/xacro/RG75-300.xacro"/>
+            <xacro:RG75-300 name="left" use_flange="true"/>
+            <xacro:RG75-300 name="right" use_flange="true"/>
 
-			<joint name="left_gripper_base_joint" type="fixed">
-				<parent link="left_link7"/>
-				<child link="left_flange"/>
-			</joint>
+            <joint name="left_gripper_base_joint" type="fixed">
+                <parent link="left_link7"/>
+                <child link="left_flange"/>
+            </joint>
 
-			<joint name="right_gripper_base_joint" type="fixed">
-				<origin xyz="0 0 -0.0045"/>
-				<parent link="right_link7"/>
-				<child link="right_flange"/>
-			</joint>
-		</xacro:if>
+            <joint name="right_gripper_base_joint" type="fixed">
+                <origin xyz="0 0 -0.0045"/>
+                <parent link="right_link7"/>
+                <child link="right_flange"/>
+            </joint>
+        </xacro:if>
 
-		<xacro:if value="${'$(arg type)' == 'leapmotor'}">
-			<xacro:include filename="$(find jodell_description)/xacro/RG75-300.xacro"/>
-			<xacro:RG75-300 name="left" use_flange="true" pad="leapmotor"/>
-			<xacro:RG75-300 name="right" use_flange="true" pad="leapmotor"/>
+        <xacro:if value="${'$(arg type)' == 'leapmotor'}">
+            <xacro:include filename="$(find jodell_description)/xacro/RG75-300.xacro"/>
+            <xacro:RG75-300 name="left" use_flange="true" pad="leapmotor"/>
+            <xacro:RG75-300 name="right" use_flange="true" pad="leapmotor"/>
 
-			<joint name="left_gripper_base_joint" type="fixed">
-				<parent link="left_link7"/>
-				<child link="left_flange"/>
-			</joint>
+            <joint name="left_gripper_base_joint" type="fixed">
+                <parent link="left_link7"/>
+                <child link="left_flange"/>
+            </joint>
 
-			<joint name="right_gripper_base_joint" type="fixed">
-				<origin xyz="0 0 -0.0045"/>
-				<parent link="right_link7"/>
-				<child link="right_flange"/>
-			</joint>
-		</xacro:if>
+            <joint name="right_gripper_base_joint" type="fixed">
+                <origin xyz="0 0 -0.0045"/>
+                <parent link="right_link7"/>
+                <child link="right_flange"/>
+            </joint>
+        </xacro:if>
 
-	</xacro:macro>
+    </xacro:macro>
 </robot>
