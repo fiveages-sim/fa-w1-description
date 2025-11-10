@@ -59,7 +59,7 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=fiveages_
 * Use Jodell Hand
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=jodell-rg75
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=rg75
   ```
 * Use Jodell Hand with Leapmotor pad
   ```bash
@@ -72,7 +72,8 @@ source ~/ros2_ws/install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=gz world:=dart
 ```
 
-* real robot
+
+#### 3.2.3 Real Robot Deploy
 ```bash
 source ~/ros2_ws/install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=real

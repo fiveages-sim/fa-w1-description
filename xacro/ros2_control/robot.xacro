@@ -58,7 +58,7 @@
             <xacro:ar5_interfaces name="left"/>
             <xacro:ar5_interfaces name="right"/>
 
-            <xacro:if value="${'$(arg type)' == 'jodell-rg75' or '$(arg type)' == 'leapmotor'}">
+            <xacro:if value="${'$(arg type)' == 'rg75' or '$(arg type)' == 'leapmotor'}">
                 <xacro:include filename="$(find jodell_description)/xacro/ros2_control/RG75-300.xacro"/>
                 <xacro:rg75_interfaces name="left"/>
                 <xacro:rg75_interfaces name="right"/>

@@ -51,7 +51,7 @@
             </joint>
         </xacro:if>
 
-        <xacro:if value="${'$(arg type)' == 'jodell-rg75'}">
+        <xacro:if value="${'$(arg type)' == 'rg75'}">
             <xacro:include filename="$(find jodell_description)/xacro/RG75-300.xacro"/>
             <xacro:RG75-300 name="left" use_flange="true"/>
             <xacro:RG75-300 name="right" use_flange="true"/>

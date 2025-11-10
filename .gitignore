@@ -1,0 +1,6 @@
+# Log files
+*.log
+logs/
+_rokae_log_/
+*.log.*
+
