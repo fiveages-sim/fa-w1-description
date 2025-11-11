@@ -1,6 +1,6 @@
 # Blender 4.5.2 LTS
 # www.blender.org
-mtllib base.mtl
+mtllib materials.mtl
 o base_link
 v 0.044488 -0.020125 0.053571
 v 0.044998 -0.019300 0.053350
