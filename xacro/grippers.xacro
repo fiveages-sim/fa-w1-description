@@ -57,6 +57,7 @@
             <xacro:RG75-300 name="right" use_flange="true"/>
 
             <joint name="left_gripper_base_joint" type="fixed">
+                <origin xyz="0 0 -0.0045"/>
                 <parent link="left_link7"/>
                 <child link="left_flange"/>
             </joint>

@@ -233,8 +233,8 @@ bodyRelative
   pitchTolerance             0.1
   muRoll                     20.0
   muPitch                    20.0
-  muPositionX                0.0
-  muPositionY                0.0
+  muPositionX                1.0
+  muPositionY                1.0
 }
 
 selfCollision

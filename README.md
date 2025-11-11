@@ -72,8 +72,14 @@ source ~/ros2_ws/install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=gz world:=dart
 ```
 
+#### 3.2.3 Isaac Sim Simulation
+```bash
+source ~/ros2_ws/install/setup.bash
+ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=isaac type:=rg75
+```
 
-#### 3.2.3 Real Robot Deploy
+
+#### 3.2.4 Real Robot Deploy
 ```bash
 source ~/ros2_ws/install/setup.bash
 ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=real
