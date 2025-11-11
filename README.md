@@ -22,7 +22,7 @@ colcon build --packages-up-to fiveages_w1_description --symlink-install
   ```bash
   #Jodell RG-75 gripper with FiveAges pad
   source ~/ros2_ws/install/setup.bash
-  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=jodell-rg75
+  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=rg75
   ```
   ```bash
   #Jodell RG-75 gripper with LeapMotor pad

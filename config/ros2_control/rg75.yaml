@@ -14,6 +14,14 @@ controller_manager:
     ocs2_arm_controller:
       type: ocs2_arm_controller/Ocs2ArmController
 
+    # 左手夹爪控制器
+    left_hand_controller:
+      type: adaptive_gripper_controller/AdaptiveGripperController
+
+    # 右手夹爪控制器
+    right_hand_controller:
+      type: adaptive_gripper_controller/AdaptiveGripperController
+
 # 差速驱动控制器配置
 diff_drive_controller:
   ros__parameters:
@@ -75,3 +83,17 @@ ocs2_arm_controller:
     rest_pos: [ 0.0, 0.0, 0.0, 0.0,
                 0.0, 1.5708, -1.5708, 0.0, 0.0, 0.0, 0.0,
                 0.0, 1.5708, 1.5708, 0.0, 0.0, 0.0, 0.0 ]
+
+# 左手夹爪控制器配置
+left_hand_controller:
+  ros__parameters:
+    joint: left_gripper_joint
+    force_feedback_ratio: 0.1
+    force_threshold: 1.5
+
+# 右手夹爪控制器配置
+right_hand_controller:
+  ros__parameters:
+    joint: right_gripper_joint
+    force_feedback_ratio: 0.1
+    force_threshold: 1.5
