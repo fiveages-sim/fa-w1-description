@@ -21,7 +21,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/chassis/base.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/chassis/base.obj"/>
       </geometry>
     </visual>
     <collision>
@@ -64,7 +64,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/chassis/wheel.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/chassis/wheel.obj"/>
       </geometry>
     </visual>
     <collision>
@@ -90,7 +90,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/chassis/wheel.obj" scale="1 -1 1"/>
+        <mesh filename="package://fiveages_w1_description/meshes/chassis/wheel.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -132,16 +132,6 @@
       <mass value="5.2916725383757"/>
       <inertia ixx="0.0204718891237549" ixy="4.85115711850459E-12" ixz="-6.41065846332626E-12" iyy="0.0225397707546832" iyz="-0.000166583637729049" izz="0.014637715325779"/>
     </inertial>
-    <visual>
-      <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/base.obj"/>
-      </geometry>
-    </visual>
-    <collision>
-      <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/base.obj"/>
-      </geometry>
-    </collision>
   </link>
   <!-- Trunk Base Joint -->
   <joint name="trunk_base_link_Joint" type="fixed">
@@ -159,12 +149,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link1.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link1.obj"/>
       </geometry>
     </collision>
   </link>
@@ -184,12 +174,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link2.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link2.obj"/>
       </geometry>
     </collision>
   </link>
@@ -209,12 +199,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link3.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link3.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link3.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link3.obj"/>
       </geometry>
     </collision>
   </link>
@@ -234,12 +224,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link4.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link4.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link4.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link4.obj"/>
       </geometry>
     </collision>
   </link>
@@ -259,12 +249,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/head1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head1.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/head1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head1.obj"/>
       </geometry>
     </collision>
   </link>
@@ -284,12 +274,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/head2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head2.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/head2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head2.obj"/>
       </geometry>
     </collision>
   </link>
@@ -320,12 +310,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -346,12 +336,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -371,12 +361,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -397,12 +387,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -423,12 +413,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -449,12 +439,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -474,12 +464,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -500,12 +490,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -518,12 +508,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -544,12 +534,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -569,12 +559,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -595,12 +585,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -621,12 +611,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -647,12 +637,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -672,12 +662,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -698,12 +688,29 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_gripper_base">
+    <inertial>
+      <origin xyz="2.54466221427663E-08 -7.0698058304508E-05 0.0686943290848626"/>
+      <mass value="4.07984857937805"/>
+      <inertia ixx="0.00511388736254833" ixy="4.54018976326608E-09" ixz="-3.96561604585672E-09" iyy="0.00444919757530844" iyz="-4.13652271091887E-06" izz="0.00308172994787423"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
       </geometry>
     </collision>
   </link>
@@ -715,34 +722,20 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/flange.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
       </geometry>
     </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="left_flange_joint" type="fixed">
     <parent link="left_flange"/>
     <child link="left_gripper_base"/>
   </joint>
-  <!-- 基座 Base Link -->
-  <link name="left_gripper_base">
-    <inertial>
-      <origin xyz="2.54466221427663E-08 -7.0698058304508E-05 0.0686943290848626"/>
-      <mass value="4.07984857937805"/>
-      <inertia ixx="0.00511388736254833" ixy="4.54018976326608E-09" ixz="-3.96561604585672E-09" iyy="0.00444919757530844" iyz="-4.13652271091887E-06" izz="0.00308172994787423"/>
-    </inertial>
-    <visual>
-      <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/base.obj"/>
-      </geometry>
-    </visual>
-    <collision>
-      <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/base.obj"/>
-      </geometry>
-    </collision>
-  </link>
-  <!-- 左指驱动部分 Link01 -->
-  <link name="left_left_driver">
+  <link name="left_left_finger">
     <inertial>
       <origin xyz="-0.00622314924233969 -0.0138600974249246 -0.000918462021462396"/>
       <mass value="0.123532229208125"/>
@@ -750,27 +743,23 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
       </geometry>
     </collision>
   </link>
-  <!-- 左指驱动关节 joint01 -->
-  <joint name="left_left_driver_joint" type="prismatic">
-    <!-- <origin xyz="0.01475 0.030558 0.13525" /> -->
+  <joint name="left_gripper_joint" type="prismatic">
     <origin xyz="0.01475 0.005263 0.13525"/>
     <parent link="left_gripper_base"/>
-    <child link="left_left_driver"/>
-    <axis xyz="0 -1 0"/>
-    <limit effort="100" lower="-3.14" upper="3.14" velocity="1"/>
-    <mimic joint="left_gripper_joint" multiplier="-1" offset="0"/>
+    <child link="left_left_finger"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="0" upper="0.038372" velocity="1"/>
   </joint>
-  <!-- 右指驱动部分 Link02 -->
-  <link name="left_right_driver">
+  <link name="left_right_finger">
     <inertial>
       <origin xyz="0.00622319002372818 -0.00413996361274716 -0.000668369659342583"/>
       <mass value="0.123532779120439"/>
@@ -778,22 +767,22 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
       </geometry>
     </collision>
   </link>
-  <!-- 右指驱动关节 joint02（主控制关节）-->
-  <joint name="left_gripper_joint" type="prismatic">
+  <joint name="left_right_finger_joint" type="prismatic">
     <origin xyz="-0.01475 -0.005263 0.13525"/>
     <parent link="left_gripper_base"/>
-    <child link="left_right_driver"/>
+    <child link="left_right_finger"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="100" lower="0" upper="0.038372" velocity="1"/>
+    <limit effort="100" lower="-3.14" upper="3.14" velocity="1"/>
+    <mimic joint="left_gripper_joint" multiplier="1" offset="0"/>
   </joint>
   <link name="left_left_finger_pad">
     <inertial>
@@ -803,19 +792,18 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/pad-fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/pad-fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
       </geometry>
     </collision>
   </link>
-  <!-- 左指 Pad 固定关节 -->
   <joint name="left_left_finger_pad_joint" type="fixed">
     <origin xyz="-0.014715 0.011478 0.0315"/>
-    <parent link="left_left_driver"/>
+    <parent link="left_left_finger"/>
     <child link="left_left_finger_pad"/>
   </joint>
   <link name="left_right_finger_pad">
@@ -826,19 +814,18 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/pad-fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/pad-fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
-  <!-- 右指 Pad 固定关节 -->
   <joint name="left_right_finger_pad_joint" type="fixed">
     <origin xyz="0.014785 -0.011478 0.03175"/>
-    <parent link="left_right_driver"/>
+    <parent link="left_right_finger"/>
     <child link="left_right_finger_pad"/>
   </joint>
   <link name="left_eef"/>
@@ -847,23 +834,6 @@
     <child link="left_eef"/>
     <origin xyz="0 0 0.22"/>
   </joint>
-  <link name="right_flange">
-    <inertial>
-      <origin xyz="-0.0315000000000112 -0.00999999999998802 -0.00845704061855646"/>
-      <mass value="0.231482541056423"/>
-      <inertia ixx="8.42942451200237E-05" ixy="7.75340663997673E-11" ixz="-3.82089316861811E-20" iyy="0.000122599240652233" iyz="-2.25716161618225E-17" izz="0.000197323026436857"/>
-    </inertial>
-    <visual>
-      <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/flange.obj"/>
-      </geometry>
-    </visual>
-  </link>
-  <joint name="right_flange_joint" type="fixed">
-    <parent link="right_flange"/>
-    <child link="right_gripper_base"/>
-  </joint>
-  <!-- 基座 Base Link -->
   <link name="right_gripper_base">
     <inertial>
       <origin xyz="2.54466221427663E-08 -7.0698058304508E-05 0.0686943290848626"/>
@@ -872,17 +842,37 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/base.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/base.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
       </geometry>
     </collision>
   </link>
-  <!-- 左指驱动部分 Link01 -->
-  <link name="right_left_driver">
+  <link name="right_flange">
+    <inertial>
+      <origin xyz="-0.0315000000000112 -0.00999999999998802 -0.00845704061855646"/>
+      <mass value="0.231482541056423"/>
+      <inertia ixx="8.42942451200237E-05" ixy="7.75340663997673E-11" ixz="-3.82089316861811E-20" iyy="0.000122599240652233" iyz="-2.25716161618225E-17" izz="0.000197323026436857"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_flange_joint" type="fixed">
+    <parent link="right_flange"/>
+    <child link="right_gripper_base"/>
+  </joint>
+  <link name="right_left_finger">
     <inertial>
       <origin xyz="-0.00622314924233969 -0.0138600974249246 -0.000918462021462396"/>
       <mass value="0.123532229208125"/>
@@ -890,27 +880,23 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
       </geometry>
     </collision>
   </link>
-  <!-- 左指驱动关节 joint01 -->
-  <joint name="right_left_driver_joint" type="prismatic">
-    <!-- <origin xyz="0.01475 0.030558 0.13525" /> -->
+  <joint name="right_gripper_joint" type="prismatic">
     <origin xyz="0.01475 0.005263 0.13525"/>
     <parent link="right_gripper_base"/>
-    <child link="right_left_driver"/>
-    <axis xyz="0 -1 0"/>
-    <limit effort="100" lower="-3.14" upper="3.14" velocity="1"/>
-    <mimic joint="right_gripper_joint" multiplier="-1" offset="0"/>
+    <child link="right_left_finger"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="0" upper="0.038372" velocity="1"/>
   </joint>
-  <!-- 右指驱动部分 Link02 -->
-  <link name="right_right_driver">
+  <link name="right_right_finger">
     <inertial>
       <origin xyz="0.00622319002372818 -0.00413996361274716 -0.000668369659342583"/>
       <mass value="0.123532779120439"/>
@@ -918,22 +904,22 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
       </geometry>
     </collision>
   </link>
-  <!-- 右指驱动关节 joint02（主控制关节）-->
-  <joint name="right_gripper_joint" type="prismatic">
+  <joint name="right_right_finger_joint" type="prismatic">
     <origin xyz="-0.01475 -0.005263 0.13525"/>
     <parent link="right_gripper_base"/>
-    <child link="right_right_driver"/>
+    <child link="right_right_finger"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="100" lower="0" upper="0.038372" velocity="1"/>
+    <limit effort="100" lower="-3.14" upper="3.14" velocity="1"/>
+    <mimic joint="right_gripper_joint" multiplier="1" offset="0"/>
   </joint>
   <link name="right_left_finger_pad">
     <inertial>
@@ -943,19 +929,18 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/pad-fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/pad-fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
       </geometry>
     </collision>
   </link>
-  <!-- 左指 Pad 固定关节 -->
   <joint name="right_left_finger_pad_joint" type="fixed">
     <origin xyz="-0.014715 0.011478 0.0315"/>
-    <parent link="right_left_driver"/>
+    <parent link="right_left_finger"/>
     <child link="right_left_finger_pad"/>
   </joint>
   <link name="right_right_finger_pad">
@@ -966,19 +951,18 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/pad-fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fa/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75-300/pad-fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
-  <!-- 右指 Pad 固定关节 -->
   <joint name="right_right_finger_pad_joint" type="fixed">
     <origin xyz="0.014785 -0.011478 0.03175"/>
-    <parent link="right_right_driver"/>
+    <parent link="right_right_finger"/>
     <child link="right_right_finger_pad"/>
   </joint>
   <link name="right_eef"/>
