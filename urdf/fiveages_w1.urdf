@@ -132,16 +132,6 @@
       <mass value="5.2916725383757"/>
       <inertia ixx="0.0204718891237549" ixy="4.85115711850459E-12" ixz="-6.41065846332626E-12" iyy="0.0225397707546832" iyz="-0.000166583637729049" izz="0.014637715325779"/>
     </inertial>
-    <visual>
-      <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/base.obj"/>
-      </geometry>
-    </visual>
-    <collision>
-      <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/base.obj"/>
-      </geometry>
-    </collision>
   </link>
   <!-- Trunk Base Joint -->
   <joint name="trunk_base_link_Joint" type="fixed">
@@ -172,8 +162,8 @@
     <origin xyz="0 -0.0393 0.112"/>
     <parent link="trunk_base_link"/>
     <child link="body_link1"/>
-    <axis xyz="0 -1 0"/>
-    <limit effort="300" lower="-2.57" upper="2.57" velocity="15"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="300" lower="-3.14" upper="3.14" velocity="15"/>
     <dynamics damping="0.01" friction="0.1"/>
   </joint>
   <link name="body_link2">
@@ -197,7 +187,7 @@
     <origin xyz="0 -0.013 0.327"/>
     <parent link="body_link1"/>
     <child link="body_link2"/>
-    <axis xyz="0 -1 0"/>
+    <axis xyz="0 1 0"/>
     <limit effort="300" lower="-3.14" upper="3.14" velocity="15"/>
     <dynamics damping="0.01" friction="0.1"/>
   </joint>
@@ -222,7 +212,7 @@
     <origin xyz="0 0.1018 0.255"/>
     <parent link="body_link2"/>
     <child link="body_link3"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 -1 0"/>
     <limit effort="300" lower="-3.14" upper="3.14" velocity="15"/>
     <dynamics damping="0.01" friction="0.1"/>
   </joint>
@@ -707,4 +697,16 @@
       </geometry>
     </collision>
   </link>
+
+  <link name="right_eef"/>
+  <joint name="right_eef_joint" type="fixed">
+    <parent link="right_link7"/>
+    <child link="right_eef"/>
+  </joint>
+
+  <link name="left_eef"/>
+  <joint name="left_eef_joint" type="fixed">
+    <parent link="left_link7"/>
+    <child link="left_eef"/>
+  </joint>
 </robot>

@@ -26,12 +26,30 @@
             </hardware>
             <xacro:ar5_interfaces name="right"/>
         </ros2_control>
+
+        <ros2_control name="eyou_body" type="system">
+            <hardware>
+                <plugin>eyou_ros2_control/EyouHardware</plugin>
+                <param name="device_type">Canable</param>
+                <param name="device_index">0</param>
+                <param name="baudrate">1000</param>
+                <param name="motor_ids">[1, 2, 3, 4, 5, 6]</param>
+                <param name="control_period_ms">4</param>
+                <param name="report_period_ms">100</param>
+                <param name="use_sync">true</param>
+
+                <!-- 每个电机的减速比配置 -->
+                <param name="reduction_ratios">[121.0, 121.0, 121.0, 121.0, 56.0, 36.0]</param>
+            </hardware>
+
+            <xacro:body_interfaces/>
+        </ros2_control>
+
         <ros2_control name="virtual_system" type="system">
             <hardware>
                 <plugin>mock_components/GenericSystem</plugin>
             </hardware>
             <xacro:chassis_interfaces/>
-            <xacro:body_interfaces/>
         </ros2_control>
     </xacro:if>
 
