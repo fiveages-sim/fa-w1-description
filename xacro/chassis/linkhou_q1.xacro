@@ -1,111 +1,138 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-	<!-- Wheel height properties -->
-	<xacro:property name="drive_wheel_height" value="-0.177505"/>
-	<xacro:property name="support_wheel_height" value="-0.2252"/>
+    <!-- Wheel height properties -->
+    <xacro:property name="drive_wheel_height" value="-0.177505"/>
+    <xacro:property name="support_wheel_height" value="-0.2252"/>
 
-	<xacro:macro name="Chassis">
+    <xacro:macro name="Chassis">
 
-		<!-- Base Link -->
-		<link name="base_footprint"/>
+        <!-- Base Link -->
+        <link name="base_footprint"/>
 
-		<!-- Chassis Base Joint -->
-		<joint name="base_footprint_joint" type="fixed">
-			<parent link="base_footprint"/>
-			<child link="base_link"/>
-			<origin xyz="0.04 0 0.265"/>
-		</joint>
+        <!-- Chassis Base Joint -->
+        <joint name="base_footprint_joint" type="fixed">
+            <parent link="base_footprint"/>
+            <child link="base_link"/>
+            <origin xyz="0.04 0 0.265"/>
+        </joint>
 
-		<!-- Chassis Base Link -->
-		<link
-				name="base_link">
-			<inertial>
-				<origin xyz="-0.0279369906854809 -0.0780315315640296 -0.140041406423673"/>
-				<mass value="67.3448332441033"/>
-				<inertia
-						ixx="0.665764602469938"
-						ixy="8.53793225941369E-05"
-						ixz="0.0157332917355964"
-						iyy="0.601401316135032"
-						iyz="0.000959662746039529"
-						izz="1.12756530077265"/>
-			</inertial>
-			<visual>
-				<geometry>
-					<mesh filename="file://$(find fiveages_w1_description)/meshes/linkhou_q1/base.obj"/>
-				</geometry>
-			</visual>
-			<collision>
-				<geometry>
-					<mesh filename="file://$(find fiveages_w1_description)/meshes/linkhou_q1/base.obj"/>
-				</geometry>
-			</collision>
-		</link>
+        <!-- Chassis Base Link -->
+        <link name="base_link">
+            <inertial>
+                <origin xyz="-0.0279369906854809 -0.0780315315640296 -0.140041406423673"/>
+                <mass value="67.3448332441033"/>
+                <inertia
+                        ixx="0.665764602469938"
+                        ixy="8.53793225941369E-05"
+                        ixz="0.0157332917355964"
+                        iyy="0.601401316135032"
+                        iyz="0.000959662746039529"
+                        izz="1.12756530077265"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/linkhou_q1/base.obj"/>
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="-0.025 0.0 -0.14"/>
+                <geometry>
+                    <box size="0.5796094 0.449 0.27073438"/>
+                </geometry>
+            </collision>
 
-		<link name="left_wheel">
-			<inertial>
-				<origin xyz="-3.33066907387547E-15 -0.0168546158454392 6.66133814775094E-15"/>
-				<mass value="2.90416852205095"/>
-				<inertia
-						ixx="0.00606418865465953"
-						ixy="-9.53834641886325E-17"
-						ixz="-3.46760179824032E-10"
-						iyy="0.0114597654254884"
-						iyz="6.73056648350715E-17"
-						izz="0.00606284887552801"/>
-			</inertial>
-			<visual>
-				<geometry>
-					<mesh filename="file://$(find fiveages_w1_description)/meshes/linkhou_q1/wheel.obj"/>
-				</geometry>
-			</visual>
-			<collision>
-				<geometry>
-					<mesh filename="file://$(find fiveages_w1_description)/meshes/linkhou_q1/wheel.obj"/>
-				</geometry>
-			</collision>
-		</link>
+            <collision>
+                <origin xyz="0.174732 0.119948 -0.271925"/>
+                <geometry>
+                    <sphere radius="0.038"/>
+                </geometry>
+            </collision>
+            <collision>
+                <origin xyz="0.174732 -0.119948 -0.271925"/>
+                <geometry>
+                    <sphere radius="0.038"/>
+                </geometry>
+            </collision>
+            <collision>
+                <origin xyz="-0.227809 0.119948 -0.271925"/>
+                <geometry>
+                    <sphere radius="0.038"/>
+                </geometry>
+            </collision>
+            <collision>
+                <origin xyz="-0.227809 -0.119948 -0.271925"/>
+                <geometry>
+                    <sphere radius="0.038"/>
+                </geometry>
+            </collision>
+        </link>
 
-		<joint name="chassis_left_joint" type="revolute">
-			<origin xyz="-0.034871 0.12918 -0.248"/>
-			<parent link="base_link"/>
-			<child link="left_wheel"/>
-			<axis xyz="0 1 0"/>
-			<limit lower="-3.14" upper="3.14" effort="100" velocity="1"/>
-		</joint>
+        <link name="left_wheel">
+            <inertial>
+                <origin xyz="-3.33066907387547E-15 -0.0168546158454392 6.66133814775094E-15"/>
+                <mass value="2.90416852205095"/>
+                <inertia
+                        ixx="0.00606418865465953"
+                        ixy="-9.53834641886325E-17"
+                        ixz="-3.46760179824032E-10"
+                        iyy="0.0114597654254884"
+                        iyz="6.73056648350715E-17"
+                        izz="0.00606284887552801"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/linkhou_q1/wheel.obj"/>
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="0 -0.019 0" rpy="1.5708 0 0"/>
+                <geometry>
+                    <cylinder radius="0.07948" length="0.036"/>
+                </geometry>
+            </collision>
+        </link>
 
-		<link name="right_wheel">
-			<inertial>
-				<origin xyz="4.21884749357559E-15 0.0168546158454395 5.99520433297585E-15"/>
-				<mass value="2.90416852205097"/>
-				<inertia
-						ixx="0.00606417635990965"
-						ixy="-8.96010303184599E-17"
-						ixz="-1.27754486123426E-07"
-						iyy="0.0114597654254885"
-						iyz="-4.98533610134315E-17"
-						izz="0.00606286117027795"/>
-			</inertial>
-			<visual>
-				<geometry>
-					<mesh filename="file://$(find fiveages_w1_description)/meshes/linkhou_q1/wheel.obj" scale="1 -1 1"/>
-				</geometry>
-			</visual>
-			<collision>
-				<geometry>
-					<mesh filename="file://$(find fiveages_w1_description)/meshes/linkhou_q1/wheel.obj" scale="1 -1 1"/>
-				</geometry>
-			</collision>
-		</link>
-		<joint name="chassis_right_joint" type="revolute">
-			<origin xyz="-0.034871 -0.28332 -0.248"/>
-			<parent link="base_link"/>
-			<child link="right_wheel"/>
-			<axis xyz="0 -1 0"/>
-			<limit lower="-3.14" upper="3.14" effort="100" velocity="1"/>
-		</joint>
+        <joint name="chassis_left_joint" type="revolute">
+            <origin xyz="-0.026651 0.20625 -0.2201"/>
+            <parent link="base_link"/>
+            <child link="left_wheel"/>
+            <axis xyz="0 1 0"/>
+            <limit lower="-3.14" upper="3.14" effort="100" velocity="1"/>
+        </joint>
+
+        <link name="right_wheel">
+            <inertial>
+                <origin xyz="4.21884749357559E-15 0.0168546158454395 5.99520433297585E-15"/>
+                <mass value="2.90416852205097"/>
+                <inertia
+                        ixx="0.00606417635990965"
+                        ixy="-8.96010303184599E-17"
+                        ixz="-1.27754486123426E-07"
+                        iyy="0.0114597654254885"
+                        iyz="-4.98533610134315E-17"
+                        izz="0.00606286117027795"/>
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/linkhou_q1/wheel.obj" scale="1 -1 1"/>
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="0 0.019 0" rpy="1.5708 0 0"/>
+                <geometry>
+                    <cylinder radius="0.07948" length="0.036"/>
+                </geometry>
+            </collision>
+        </link>
+        <joint name="chassis_right_joint" type="revolute">
+            <origin xyz="-0.026651 -0.20625 -0.2201"/>
+            <parent link="base_link"/>
+            <child link="right_wheel"/>
+            <axis xyz="0 -1 0"/>
+            <limit lower="-3.14" upper="3.14" effort="100" velocity="1"/>
+        </joint>
 
 
-	</xacro:macro>
+    </xacro:macro>
 </robot>
