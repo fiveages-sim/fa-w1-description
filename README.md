@@ -37,6 +37,23 @@ colcon build --packages-up-to fiveages_w1_description --symlink-install
   source ~/ros2_ws/install/setup.bash
   ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=AG2F120S
   ```
+
+### 2.2 Component
+* Base
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py robot:=fiveages_w1
+  ```
+* Linkhou Q1 Base
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py robot:=fiveages_w1 type:=linkhou_q1
+  ```
+* Upper Body
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch component.launch.py robot:=fiveages_w1 type:=upper_body
+  ```
 ## 3. OCS2 Demo
 
 ### 3.1 Official OCS2 Mobile Manipulator Demo
