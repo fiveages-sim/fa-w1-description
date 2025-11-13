@@ -168,10 +168,10 @@ inputCost
     {
       scaling 1e-2
 
-         (0,0)   2.0       ; body_joint1
-         (1,0)   2.0       ; body_joint2
-         (2,0)   2.0       ; body_joint3
-         (3,0)   2.0       ; body_joint4
+         (0,0)   1.0       ; body_joint1
+         (1,0)   1.0       ; body_joint2
+         (2,0)   1.0       ; body_joint3
+         (3,0)   1.0       ; body_joint4
          (4,0)   0.11      ; left_joint1
          (5,0)   0.11      ; left_joint2
          (6,0)   0.11      ; left_joint3
@@ -229,8 +229,8 @@ bodyRelative
 {
   activate                   true
   bodyLinkName               "body_link4"
-  rollTolerance              0.1
-  pitchTolerance             0.1
+  rollTolerance              0.05
+  pitchTolerance             0.05
   muRoll                     20.0
   muPitch                    20.0
   muPositionX                5.0
@@ -299,10 +299,10 @@ jointVelocityLimits
     ; velocity limits for the arm DOFs
     arm
     {
-        (0,0)  -0.15         ; body_joint1 [rad/s]
-        (1,0)  -0.15         ; body_joint2 [rad/s]
-        (2,0)  -0.15         ; body_joint3 [rad/s]
-        (3,0)  -0.15         ; body_joint4 [rad/s]
+        (0,0)  -0.1         ; body_joint1 [rad/s]
+        (1,0)  -0.1         ; body_joint2 [rad/s]
+        (2,0)  -0.1         ; body_joint3 [rad/s]
+        (3,0)  -0.1         ; body_joint4 [rad/s]
         (4,0)  -0.257         ; left_joint1 [rad/s]
         (5,0)  -0.257         ; left_joint2 [rad/s]
         (6,0)  -0.257         ; left_joint3 [rad/s]
@@ -353,10 +353,10 @@ jointVelocityLimits
     ; velocity limits for the arm DOFs
     arm
     {
-        (0,0)  0.15          ; body_joint1 [rad/s]
-        (1,0)  0.15          ; body_joint2 [rad/s]
-        (2,0)  0.15          ; body_joint3 [rad/s]
-        (3,0)  0.15          ; body_joint4 [rad/s]
+        (0,0)  0.1          ; body_joint1 [rad/s]
+        (1,0)  0.1          ; body_joint2 [rad/s]
+        (2,0)  0.1          ; body_joint3 [rad/s]
+        (3,0)  0.1          ; body_joint4 [rad/s]
         (4,0)  0.257          ; left_joint1 [rad/s]
         (5,0)  0.257          ; left_joint2 [rad/s]
         (6,0)  0.257          ; left_joint3 [rad/s]
