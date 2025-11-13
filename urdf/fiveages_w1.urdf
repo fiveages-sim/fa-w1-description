@@ -163,7 +163,7 @@
     <parent link="trunk_base_link"/>
     <child link="body_link1"/>
     <axis xyz="0 1 0"/>
-    <limit effort="300" lower="-3.14" upper="3.14" velocity="15"/>
+    <limit effort="300" lower="0.0" upper="1.504" velocity="15"/>
     <dynamics damping="0.01" friction="0.1"/>
   </joint>
   <link name="body_link2">
@@ -188,7 +188,7 @@
     <parent link="body_link1"/>
     <child link="body_link2"/>
     <axis xyz="0 1 0"/>
-    <limit effort="300" lower="-3.14" upper="3.14" velocity="15"/>
+    <limit effort="300" lower="-2.5" upper="2.5" velocity="15"/>
     <dynamics damping="0.01" friction="0.1"/>
   </joint>
   <link name="body_link3">
@@ -213,7 +213,7 @@
     <parent link="body_link2"/>
     <child link="body_link3"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="300" lower="-3.14" upper="3.14" velocity="15"/>
+    <limit effort="300" lower="-3.14" upper="0" velocity="15"/>
     <dynamics damping="0.01" friction="0.1"/>
   </joint>
   <link name="body_link4">
