@@ -125,12 +125,27 @@
                 </geometry>
             </collision>
         </link>
+
         <joint name="chassis_right_joint" type="revolute">
             <origin xyz="-0.026651 -0.20625 -0.2201"/>
             <parent link="base_link"/>
             <child link="right_wheel"/>
             <axis xyz="0 -1 0"/>
             <limit lower="-3.14" upper="3.14" effort="100" velocity="1"/>
+        </joint>
+
+        <link name="scan"/>
+        <joint name="scan_link" type="fixed">
+            <parent link="base_link"/>
+            <child link="scan"/>
+            <origin xyz="0.18785 0 -0.089789"/>
+        </joint>
+
+        <link name="imu"/>
+        <joint name="imu_link" type="fixed">
+            <parent link="base_footprint"/>
+            <child link="imu"/>
+            <origin xyz="0 0 0.13"/>
         </joint>
 
 
