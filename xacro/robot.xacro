@@ -14,6 +14,11 @@
 		<xacro:property name="selected_gripper_type" value="rg75"/>
 	</xacro:if>
 
+	<xacro:if value="${type_arg == 'linkhou_leapmotor'}">
+		<xacro:property name="selected_chassis" value="linkhou_q1"/>
+		<xacro:property name="selected_gripper_type" value="leapmotor"/>
+	</xacro:if>
+
 	<!-- Include Component Macros -->
 	<xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/${selected_chassis}.xacro"/>
 	<xacro:include filename="$(find fiveages_w1_description)/xacro/body.xacro"/>

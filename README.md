@@ -96,6 +96,12 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=fiveages_
   ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=linkhou_rg75
   ```  
 
+* Use Leapmotor pad and Linkhou_q1 chassis
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=linkhou_leapmotor
+  ```  
+
 #### 3.2.2 Gazebo Simulation
 ```bash
 source ~/ros2_ws/install/setup.bash
@@ -104,7 +110,12 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=gz t
 
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 chassis:=linkhou_q1 hardware:=gz world:=dart
+ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=linkhou_rg75 hardware:=gz world:=dart
+```
+
+```bash
+source ~/ros2_ws/install/setup.bash
+ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=leapmotor hardware:=gz world:=dart
 ```
 
 #### 3.2.3 Isaac Sim Simulation

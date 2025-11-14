@@ -21,7 +21,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/linkhou_q1/base.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/linkhou_q1/base.obj"/>
       </geometry>
     </visual>
     <collision>
@@ -63,7 +63,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/linkhou_q1/wheel.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/linkhou_q1/wheel.obj"/>
       </geometry>
     </visual>
     <collision>
@@ -88,7 +88,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/linkhou_q1/wheel.obj" scale="1 -1 1"/>
+        <mesh filename="package://fiveages_w1_description/meshes/linkhou_q1/wheel.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -141,12 +141,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link1.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link1.obj"/>
       </geometry>
     </collision>
   </link>
@@ -166,12 +166,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link2.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link2.obj"/>
       </geometry>
     </collision>
   </link>
@@ -191,12 +191,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link3.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link3.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link3.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link3.obj"/>
       </geometry>
     </collision>
   </link>
@@ -216,12 +216,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link4.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link4.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/link4.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link4.obj"/>
       </geometry>
     </collision>
   </link>
@@ -241,12 +241,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/head1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head1.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/head1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head1.obj"/>
       </geometry>
     </collision>
   </link>
@@ -266,12 +266,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/head2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head2.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/fiveages_w1_description/share/fiveages_w1_description/meshes/body/head2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head2.obj"/>
       </geometry>
     </collision>
   </link>
@@ -302,12 +302,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -328,12 +328,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -353,12 +353,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -379,12 +379,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -405,12 +405,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -431,12 +431,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -456,12 +456,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -482,12 +482,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -500,12 +500,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -526,12 +526,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -551,12 +551,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -577,12 +577,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -603,12 +603,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -629,12 +629,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -654,12 +654,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -680,12 +680,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/rokae_ar5_description/share/rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -698,12 +698,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/base.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/base.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
       </geometry>
     </collision>
   </link>
@@ -715,12 +715,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/flange.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/flange.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
       </geometry>
     </collision>
   </link>
@@ -736,12 +736,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
       </geometry>
     </collision>
   </link>
@@ -760,12 +760,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -785,12 +785,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/pad_fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/pad_fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
       </geometry>
     </collision>
   </link>
@@ -807,12 +807,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -835,12 +835,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/base.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/base.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
       </geometry>
     </collision>
   </link>
@@ -852,12 +852,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/flange.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/flange.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
       </geometry>
     </collision>
   </link>
@@ -873,12 +873,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
       </geometry>
     </collision>
   </link>
@@ -897,12 +897,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -922,12 +922,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/pad_fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/pad_fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
       </geometry>
     </collision>
   </link>
@@ -944,12 +944,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/fiveages/ros2_ws/install/jodell_description/share/jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
