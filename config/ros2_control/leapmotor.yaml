@@ -75,6 +75,7 @@ ocs2_arm_controller:
       - position
 
     robot_name: fiveages_w1
+    robot_type: leapmotor
 
     # Control parameters
     home_pos: [ 0.0, 0.0, 0.0, 0.0,

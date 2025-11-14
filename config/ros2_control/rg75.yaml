@@ -75,6 +75,7 @@ ocs2_arm_controller:
       - position
 
     robot_name: fiveages_w1
+    robot_type: rg75
 
     # Control parameters
     home_pos: [ -0.603, 1.57, 1.01, 0.0,
