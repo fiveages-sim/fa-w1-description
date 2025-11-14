@@ -16,6 +16,7 @@
             <hardware>
                 <plugin>rokae_ros2_control/RokaeHardware</plugin>
                 <param name="arm_ip">192.168.2.160</param>
+                <param name="joint_impedance">500,500,500,500,50,50,50</param>
             </hardware>
             <xacro:ar5_interfaces name="left"/>
         </ros2_control>
@@ -23,6 +24,7 @@
             <hardware>
                 <plugin>rokae_ros2_control/RokaeHardware</plugin>
                 <param name="arm_ip">192.168.2.161</param>
+                <param name="joint_impedance">500,500,500,500,50,50,50</param>
             </hardware>
             <xacro:ar5_interfaces name="right"/>
         </ros2_control>
