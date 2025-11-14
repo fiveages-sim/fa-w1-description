@@ -19,7 +19,7 @@ colcon build --packages-up-to fiveages_w1_description --symlink-install
 * Switch chassis to Linkhou Q1
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 chassis:=linkhou_q1
+  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=linkhou_rg75
   ```
       
   ![FiveAges](.images/fiveages_w1.png)
@@ -89,6 +89,13 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=fiveages_
   source ~/ros2_ws/install/setup.bash
   ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=leapmotor
   ```
+
+* Use Jodell Hand and Linkhou_q1 chassis
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=linkhou_rg75
+  ```  
+
 #### 3.2.2 Gazebo Simulation
 ```bash
 source ~/ros2_ws/install/setup.bash
