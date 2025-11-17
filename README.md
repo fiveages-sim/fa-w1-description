@@ -108,11 +108,16 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=isaa
 
 
 #### 3.2.4 Real Robot Deploy
-```bash
-source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=real
-```
-
+* Deploy On Robot
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=real
+  ```
+* Launch Program using Laptop
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=real-laptop
+  ```
 ### 4. Navigation
 * Gazebo Simulation
   ```bash
