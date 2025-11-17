@@ -16,6 +16,12 @@ colcon build --packages-up-to fiveages_w1_description --symlink-install
   ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1
   ```
 
+* FiveAges W1 with rg75
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=rg75
+  ```
+
 * Switch chassis to Linkhou Q1
   ```bash
   source ~/ros2_ws/install/setup.bash
