@@ -80,10 +80,15 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=fiveages_
 ### 3.2 OCS2 Arm Controller Demo
 
 #### 3.2.1 Mock Component
-* Empty Hand
+* Empty Hand (Full Body Control)
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1
+  ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1
+  ```
+* Empty Hand (Split Body Control)
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller split_body.launch.py robot:=fiveages_w1
   ```
 * Use Jodell Hand
   ```bash
@@ -134,7 +139,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=isaa
 #### 3.2.4 Real Robot Deploy
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=real
+ros2 launch ocs2_arm_controller full.launch.py robot:=fiveages_w1 hardware:=real
 ```
 
 ### 4. Navigation

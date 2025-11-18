@@ -17,7 +17,7 @@ model_information {
   }
 
   ; base frame of the robot (from URDF)
-  baseFrame                       "base_footprint"
+  baseFrame                       "body_link4"
   ; end-effector frame of the robot (from URDF)
   eeFrame                         "left_link7"
   eeFrame1                        "right_link7"
@@ -218,18 +218,6 @@ finalEndEffector
       muPosition      10.0
       muOrientation    5.0
     }
-}
-
-bodyRelative
-{
-  activate                   true
-  bodyLinkName               "body_link4"
-  rollTolerance              0.1
-  pitchTolerance             0.1
-  muRoll                     20.0
-  muPitch                    20.0
-  muPositionX                0.0
-  muPositionY                0.0
 }
 
 selfCollision
