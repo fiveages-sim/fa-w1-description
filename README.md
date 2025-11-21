@@ -176,6 +176,13 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=isaa
   ros2 launch ocs2_arm_controller split_body.launch.py  robot:=fiveages_w1 hardware:=real-laptop
   ```
 
+* RG75 Gripper
+  ```bash
+  source ~/ros2_ws/install/setup.bash
+  ros2 launch ocs2_arm_controller split_body.launch.py  robot:=fiveages_w1 hardware:=real-laptop type:=rg75
+  ```
+
+
 #### 3.3.2 Launch on Robot Distrobox
 
 * Deploy On Robot

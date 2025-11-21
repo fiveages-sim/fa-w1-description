@@ -144,8 +144,8 @@ head_joint_controller:
     
     # 三组不同的 home pose 配置
     # 使用 home_1, home_2, home_3 参数命名规则
-    home_1: [0.0, 0.0]           # 配置 0: 正视前方
-    home_2: [0.0, 0.3]        # 配置 1: 向左看约 -45度
+    home_1: [0.0, -0.75]           # 配置 0: 正视前方
+    home_2: [0.0, 0.0]        # 配置 1: 向左看约 -45度
     
     home_duration: 5.0
     move_duration: 3.0

@@ -20,6 +20,14 @@
                 <param name="local_ip">192.168.2.100</param>
             </hardware>
             <xacro:ar5_interfaces name="left"/>
+            <xacro:if value="${'$(arg type)' == 'rg75'}">
+                <joint name="left_gripper_joint">
+                    <command_interface name="position"/>
+                    <state_interface name="position">
+                        <param name="initial_value">0</param>
+                    </state_interface>
+                </joint>
+            </xacro:if>
         </ros2_control>
         <ros2_control name="ar5_right_system" type="system">
             <hardware>
@@ -29,6 +37,14 @@
                 <param name="local_ip">192.168.2.100</param>
             </hardware>
             <xacro:ar5_interfaces name="right"/>
+            <xacro:if value="${'$(arg type)' == 'rg75'}">
+                <joint name="right_gripper_joint">
+                    <command_interface name="position"/>
+                    <state_interface name="position">
+                        <param name="initial_value">0</param>
+                    </state_interface>
+                </joint>
+            </xacro:if>
         </ros2_control>
 
         <ros2_control name="eyou_body" type="system">
@@ -62,10 +78,18 @@
             <hardware>
                 <plugin>rokae_ros2_control/RokaeHardware</plugin>
                 <param name="arm_ip">192.168.2.160</param>
-                <param name="joint_impedance">500,500,500,500,50,50,50</param>
+<!--                <param name="joint_impedance">500,500,500,500,50,50,50</param>-->
                 <param name="local_ip">192.168.2.233</param>
             </hardware>
             <xacro:ar5_interfaces name="left"/>
+            <xacro:if value="${'$(arg type)' == 'rg75'}">
+                <joint name="left_gripper_joint">
+                    <command_interface name="position"/>
+                    <state_interface name="position">
+                        <param name="initial_value">0</param>
+                    </state_interface>
+                </joint>
+            </xacro:if>
         </ros2_control>
         <ros2_control name="ar5_right_system" type="system">
             <hardware>
@@ -75,6 +99,14 @@
                 <param name="local_ip">192.168.2.233</param>
             </hardware>
             <xacro:ar5_interfaces name="right"/>
+            <xacro:if value="${'$(arg type)' == 'rg75'}">
+                <joint name="right_gripper_joint">
+                    <command_interface name="position"/>
+                    <state_interface name="position">
+                        <param name="initial_value">0</param>
+                    </state_interface>
+                </joint>
+            </xacro:if>
         </ros2_control>
 
         <ros2_control name="eyou_body" type="system">
