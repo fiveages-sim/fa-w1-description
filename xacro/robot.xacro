@@ -3,6 +3,7 @@
 
 	<!-- Arguments -->
 	<xacro:arg name="type" default=""/>
+	<xacro:arg name="collider" default="convex"/>
 
 	<!-- Select chassis & gripper based on type -->
 	<xacro:property name="type_arg" value="$(arg type)"/>
@@ -29,7 +30,7 @@
 	<xacro:Chassis/>
 
 	<!-- Body -->
-	<xacro:Body/>
+	<xacro:Body collider="$(arg collider)"/>
 
 	<link name="arm_base"/>
 
@@ -52,8 +53,8 @@
 	</joint>
 
 	<!-- Arms -->
-	<xacro:Arm name="left" direction="1"/>
-	<xacro:Arm name="right" direction="-1"/>
+	<xacro:Arm name="left" collider="$(arg collider)" direction="1"/>
+	<xacro:Arm name="right" collider="$(arg collider)" direction="-1"/>
 
 	<xacro:Grippers type="${selected_gripper_type}"/>
 </robot>

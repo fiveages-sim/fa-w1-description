@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:macro name="Body">
+    <xacro:macro name="Body" params="collider:=convex">
 
         <!-- Trunk Base Link -->
         <link name="trunk_base_link">
@@ -16,6 +16,13 @@
                         iyz="-0.000166583637729049"
                         izz="0.014637715325779"/>
             </inertial>
+            <xacro:if value="${collider == 'convex'}">
+                <collision>
+                    <geometry>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/base.obj"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
         </link>
 
         <!-- Trunk Base Joint -->
@@ -44,11 +51,13 @@
                     <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link1.obj"/>
                 </geometry>
             </visual>
-            <collision>
-                <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link1.obj"/>
-                </geometry>
-            </collision>
+            <xacro:if value="${collider == 'convex'}">
+                <collision>
+                    <geometry>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link1.obj"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
         </link>
 
         <joint name="body_joint1" type="revolute">
@@ -77,11 +86,13 @@
                     <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link2.obj"/>
                 </geometry>
             </visual>
-            <collision>
-                <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link2.obj"/>
-                </geometry>
-            </collision>
+            <xacro:if value="${collider == 'convex'}">
+                <collision>
+                    <geometry>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link2.obj"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
         </link>
 
         <joint name="body_joint2" type="revolute">
@@ -110,11 +121,13 @@
                     <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link3.obj"/>
                 </geometry>
             </visual>
-            <collision>
-                <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link3.obj"/>
-                </geometry>
-            </collision>
+            <xacro:if value="${collider == 'convex'}">
+                <collision>
+                    <geometry>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link3.obj"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
         </link>
 
         <joint name="body_joint3" type="revolute">
@@ -143,11 +156,21 @@
                     <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link4.obj"/>
                 </geometry>
             </visual>
-            <collision>
-                <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link4.obj"/>
-                </geometry>
-            </collision>
+            <xacro:if value="${collider == 'convex'}">
+                <collision>
+                    <geometry>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link4.obj"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
+            <xacro:if value="${collider == 'simple'}">
+                <collision>
+                    <origin xyz="0.0091 0 0.256"/>
+                    <geometry>
+                        <box size="0.2509 0.35 0.5029"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
         </link>
 
         <joint name="body_joint4" type="revolute">
@@ -176,11 +199,21 @@
                     <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head1.obj"/>
                 </geometry>
             </visual>
-            <collision>
-                <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head1.obj"/>
-                </geometry>
-            </collision>
+            <xacro:if value="${collider == 'convex'}">
+                <collision>
+                    <geometry>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head1.obj"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
+            <xacro:if value="${collider == 'simple'}">
+                <collision>
+                    <origin xyz="0.0003 0.0000 -0.0100"/>
+                    <geometry>
+                        <box size="0.0500 0.0500 0.0401"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
         </link>
 
         <joint name="head_joint1" type="revolute">
@@ -194,7 +227,7 @@
 
         <link name="head_link2">
             <inertial>
-                <origin xyz="1.3878E-16 -0.0243 0.093841"/>
+                <origin xyz="0.02 0 0.093841"/>
                 <mass value="1.2686"/>
                 <inertia
                         ixx="0.0042697"
@@ -209,11 +242,21 @@
                     <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head2.obj"/>
                 </geometry>
             </visual>
-            <collision>
-                <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head2.obj"/>
-                </geometry>
-            </collision>
+            <xacro:if value="${collider == 'convex'}">
+                <collision>
+                    <geometry>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head2.obj"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
+            <xacro:if value="${collider == 'simple'}">
+                <collision>
+                    <origin xyz="0.0366 0 0.08"/>
+                    <geometry>
+                        <box size="0.1813 0.1640 0.2230"/>
+                    </geometry>
+                </collision>
+            </xacro:if>
         </link>
 
         <joint name="head_joint2" type="revolute">
