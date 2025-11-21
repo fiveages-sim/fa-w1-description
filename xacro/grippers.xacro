@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:macro name="Grippers">
+    <xacro:macro name="Grippers" params="type:=''">
 
-        <xacro:arg name="type" default="empty"/>
+        <!-- Note: type parameter is now passed as macro parameter -->
 
-        <xacro:if value="${'$(arg type)' == 'robotiq85'}">
+        <xacro:if value="${type == 'robotiq85'}">
             <xacro:include filename="$(find robotiq_description)/xacro/2F85.xacro"/>
             <xacro:Robotiq85 name="left"/>
             <xacro:Robotiq85 name="right"/>
@@ -21,7 +21,7 @@
             </joint>
         </xacro:if>
 
-        <xacro:if value="${'$(arg type)' == 'AG2F90-C'}">
+        <xacro:if value="${type == 'AG2F90-C'}">
             <xacro:include filename="$(find changingtek_description)/xacro/AG2F90-C.xacro"/>
             <xacro:AG2F90-C name="left"/>
             <xacro:AG2F90-C name="right"/>
@@ -36,7 +36,7 @@
             </joint>
         </xacro:if>
 
-        <xacro:if value="${'$(arg type)' == 'AG2F120S'}">
+        <xacro:if value="${type == 'AG2F120S'}">
             <xacro:include filename="$(find changingtek_description)/xacro/AG2F120S.xacro"/>
             <xacro:AG2F120S name="left"/>
             <xacro:AG2F120S name="right"/>
@@ -51,7 +51,7 @@
             </joint>
         </xacro:if>
 
-        <xacro:if value="${'$(arg type)' == 'rg75'}">
+        <xacro:if value="${type == 'rg75'}">
             <xacro:include filename="$(find jodell_description)/xacro/RG75-300.xacro"/>
             <xacro:RG75-300 name="left" use_flange="true"/>
             <xacro:RG75-300 name="right" use_flange="true"/>
@@ -69,12 +69,13 @@
             </joint>
         </xacro:if>
 
-        <xacro:if value="${'$(arg type)' == 'leapmotor'}">
+        <xacro:if value="${type == 'leapmotor'}">
             <xacro:include filename="$(find jodell_description)/xacro/RG75-300.xacro"/>
             <xacro:RG75-300 name="left" use_flange="true" pad="leapmotor"/>
             <xacro:RG75-300 name="right" use_flange="true" pad="leapmotor"/>
 
             <joint name="left_gripper_base_joint" type="fixed">
+                <origin xyz="0 0 -0.0045"/>
                 <parent link="left_link7"/>
                 <child link="left_flange"/>
             </joint>

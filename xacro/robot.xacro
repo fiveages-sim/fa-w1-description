@@ -2,10 +2,26 @@
 <robot name="FiveAges W1" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 	<!-- Arguments -->
-	<xacro:arg name="chassis" default="chassis"/>
+	<xacro:arg name="type" default=""/>
+	<xacro:arg name="collider" default="convex"/>
+
+	<!-- Select chassis & gripper based on type -->
+	<xacro:property name="type_arg" value="$(arg type)"/>
+	<xacro:property name="selected_chassis" value="chassis"/>
+	<xacro:property name="selected_gripper_type" value="${type_arg}"/>
+
+	<xacro:if value="${type_arg == 'linkhou_rg75'}">
+		<xacro:property name="selected_chassis" value="linkhou_q1"/>
+		<xacro:property name="selected_gripper_type" value="rg75"/>
+	</xacro:if>
+
+	<xacro:if value="${type_arg == 'linkhou_leapmotor'}">
+		<xacro:property name="selected_chassis" value="linkhou_q1"/>
+		<xacro:property name="selected_gripper_type" value="leapmotor"/>
+	</xacro:if>
 
 	<!-- Include Component Macros -->
-	<xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/$(arg chassis).xacro"/>
+	<xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/${selected_chassis}.xacro"/>
 	<xacro:include filename="$(find fiveages_w1_description)/xacro/body.xacro"/>
 	<xacro:include filename="$(find rokae_ar5_description)/xacro/arm.xacro"/>
 	<xacro:include filename="$(find fiveages_w1_description)/xacro/grippers.xacro"/>
@@ -14,21 +30,31 @@
 	<xacro:Chassis/>
 
 	<!-- Body -->
-	<xacro:Body/>
+	<xacro:Body collider="$(arg collider)"/>
+
+	<link name="arm_base"/>
+
+	<joint name="arm_base_joint" type="fixed">
+		<parent link="body_link4"/>
+		<child link="arm_base"/>
+		<origin xyz="0.0 0.0 0.41"/>
+	</joint>
 
 	<joint name="left_arm_mount" type="fixed">
-		<parent link="body_link4"/>
+		<parent link="arm_base"/>
 		<child link="left_base_link"/>
-		<origin xyz="0.0 0.12 0.41" rpy="-1.57 1.57 0"/>
+		<origin xyz="0.0 0.12 0" rpy="-1.57 1.57 0"/>
 	</joint>
-	<joint name="right_arm_mount" type="fixed">
-		<parent link="body_link4"/>
-		<child link="right_base_link"/>
-		<origin xyz="0.0 -0.12 0.41" rpy="1.57 1.57 0"/>
-	</joint>
-	<!-- Arms -->
-	<xacro:Arm name="left" direction="1"/>
-	<xacro:Arm name="right" direction="-1"/>
 
-	<xacro:Grippers/>
+	<joint name="right_arm_mount" type="fixed">
+		<parent link="arm_base"/>
+		<child link="right_base_link"/>
+		<origin xyz="0.0 -0.12 0" rpy="1.57 1.57 0"/>
+	</joint>
+
+	<!-- Arms -->
+	<xacro:Arm name="left" collider="$(arg collider)" direction="1"/>
+	<xacro:Arm name="right" collider="$(arg collider)" direction="-1"/>
+
+	<xacro:Grippers type="${selected_gripper_type}"/>
 </robot>

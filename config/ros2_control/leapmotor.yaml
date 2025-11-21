@@ -46,8 +46,8 @@ diff_drive_controller:
 ocs2_arm_controller:
   ros__parameters:
     # Joint configuration
-    update_rate: 1000  # Hz
-    mpc_frequency: 100.0
+    update_rate: 50  # Hz
+    mpc_frequency: 20
     info_file_name: fixed_base
     joints:
       - body_joint1
@@ -75,6 +75,7 @@ ocs2_arm_controller:
       - position
 
     robot_name: fiveages_w1
+    robot_type: leapmotor
 
     # Control parameters
     home_pos: [ 0.0, 0.0, 0.0, 0.0,
