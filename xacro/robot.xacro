@@ -32,14 +32,6 @@
 	<!-- Body -->
 	<xacro:Body collider="$(arg collider)"/>
 
-	<link name="arm_base"/>
-
-	<joint name="arm_base_joint" type="fixed">
-		<parent link="body_link4"/>
-		<child link="arm_base"/>
-		<origin xyz="0.0 0.0 0.41"/>
-	</joint>
-
 	<joint name="left_arm_mount" type="fixed">
 		<parent link="arm_base"/>
 		<child link="left_base_link"/>

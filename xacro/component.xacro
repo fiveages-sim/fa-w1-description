@@ -19,26 +19,8 @@
 
 	<xacro:if value="${'$(arg type)' == 'upper_body'}">
 		<xacro:include filename="$(find fiveages_w1_description)/xacro/body.xacro"/>
-		<xacro:include filename="$(find rokae_ar5_description)/xacro/arm.xacro"/>
-
 		<link name="base_link"/>
-		<!-- Body -->
 		<xacro:Body/>
-
-		<joint name="left_arm_mount" type="fixed">
-			<parent link="body_link4"/>
-			<child link="left_base_link"/>
-			<origin xyz="0.0 0.12 0.41" rpy="-1.57 1.57 0"/>
-		</joint>
-		<joint name="right_arm_mount" type="fixed">
-			<parent link="body_link4"/>
-			<child link="right_base_link"/>
-			<origin xyz="0.0 -0.12 0.41" rpy="1.57 1.57 0"/>
-		</joint>
-		<!-- Arms -->
-		<xacro:Arm name="left" direction="1"/>
-		<xacro:Arm name="right" direction="-1"/>
-
 	</xacro:if>
 
 </robot>
