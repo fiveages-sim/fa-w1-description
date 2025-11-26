@@ -2,8 +2,8 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <!-- Wheel height properties -->
-    <xacro:property name="drive_wheel_height" value="-0.177505"/>
-    <xacro:property name="support_wheel_height" value="-0.2252"/>
+    <xacro:property name="drive_wheel_height" value="-0.220015"/>
+    <xacro:property name="support_wheel_height" value="-0.253386"/>
 
     <xacro:macro name="Chassis">
 
@@ -43,27 +43,27 @@
             </collision>
 
             <collision>
-                <origin xyz="0.174732 0.119948 -0.271925"/>
+                <origin xyz="0.174732 0.119948 ${support_wheel_height}"/>
                 <geometry>
-                    <sphere radius="0.038"/>
+                    <sphere radius="0.0374275"/>
                 </geometry>
             </collision>
             <collision>
-                <origin xyz="0.174732 -0.119948 -0.271925"/>
+                <origin xyz="0.174732 -0.119948 ${support_wheel_height}"/>
                 <geometry>
-                    <sphere radius="0.038"/>
+                    <sphere radius="0.0374275"/>
                 </geometry>
             </collision>
             <collision>
-                <origin xyz="-0.227809 0.119948 -0.271925"/>
+                <origin xyz="-0.227809 0.119948 ${support_wheel_height}"/>
                 <geometry>
-                    <sphere radius="0.038"/>
+                    <sphere radius="0.0374275"/>
                 </geometry>
             </collision>
             <collision>
-                <origin xyz="-0.227809 -0.119948 -0.271925"/>
+                <origin xyz="-0.227809 -0.119948 ${support_wheel_height}"/>
                 <geometry>
-                    <sphere radius="0.038"/>
+                    <sphere radius="0.0374275"/>
                 </geometry>
             </collision>
         </link>
@@ -88,13 +88,13 @@
             <collision>
                 <origin xyz="0 -0.019 0" rpy="1.5708 0 0"/>
                 <geometry>
-                    <cylinder radius="0.07948" length="0.036"/>
+                    <cylinder radius="0.07585" length="0.036"/>
                 </geometry>
             </collision>
         </link>
 
         <joint name="chassis_left_joint" type="revolute">
-            <origin xyz="-0.026651 0.20625 -0.2201"/>
+            <origin xyz="-0.026651 0.20625 ${drive_wheel_height}"/>
             <parent link="base_link"/>
             <child link="left_wheel"/>
             <axis xyz="0 1 0"/>
@@ -121,13 +121,13 @@
             <collision>
                 <origin xyz="0 0.019 0" rpy="1.5708 0 0"/>
                 <geometry>
-                    <cylinder radius="0.07948" length="0.036"/>
+                    <cylinder radius="0.07585" length="0.036"/>
                 </geometry>
             </collision>
         </link>
 
         <joint name="chassis_right_joint" type="revolute">
-            <origin xyz="-0.026651 -0.20625 -0.2201"/>
+            <origin xyz="-0.026651 -0.20625 ${drive_wheel_height}"/>
             <parent link="base_link"/>
             <child link="right_wheel"/>
             <axis xyz="0 -1 0"/>
