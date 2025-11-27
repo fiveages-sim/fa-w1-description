@@ -310,12 +310,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/base.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/base.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -336,12 +336,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -361,12 +361,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -387,12 +387,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -413,12 +413,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -439,12 +439,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -464,12 +464,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -490,12 +490,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link7.obj" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link7.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -508,12 +508,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/base.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/base.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/base.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -534,12 +534,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link1.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -559,12 +559,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link2.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -585,12 +585,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link3.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -611,12 +611,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link4.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -637,12 +637,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link5.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -662,12 +662,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link6.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -688,12 +688,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link7.obj" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/link7.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link7.obj" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>

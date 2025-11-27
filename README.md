@@ -138,7 +138,7 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=leapmoto
 
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=isaac type:=rg75
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 hardware:=isaac
 ```
 
 ### 3.3 Real Robot Deploy
