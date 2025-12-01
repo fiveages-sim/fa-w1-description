@@ -2,6 +2,8 @@
 
 This package contains the description files for FiveAges W1 humanoid.
 
+![FiveAges](.images/fiveages_w1.png)
+
 ## 1. Build
 
 ```bash
@@ -11,45 +13,47 @@ colcon build --packages-up-to fiveages_w1_description --symlink-install
 
 ## 2. Visualize the robot
 
+### 2.1 Full Robot
+
 * FiveAges W1 (Basic visualization)
   ```bash
   source ~/ros2_ws/install/setup.bash
   ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 collider:=simple
   ```
 
-* FiveAges W1 with rg75
-  ```bash
-  source ~/ros2_ws/install/setup.bash
-  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=rg75
-  ```
 
-* Switch chassis to Linkhou Q1
-  ```bash
-  source ~/ros2_ws/install/setup.bash
-  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=linkhou_rg75
-  ```
+<details>
+<summary><strong>More Configs</strong></summary>
 
-  ![FiveAges](.images/fiveages_w1.png)
-
-* With Grippers
-  ```bash
-  #Jodell RG-75 gripper with FiveAges pad
-  source ~/ros2_ws/install/setup.bash
-  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=rg75
-  ```
-  ```bash
-  #Jodell RG-75 gripper with LeapMotor pad
-  source ~/ros2_ws/install/setup.bash
-  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=leapmotor
-  ```
-  ```bash
-  source ~/ros2_ws/install/setup.bash
-  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=AG2F90-C
-  ```
+  * FiveAges W1 with rg75
     ```bash
-  source ~/ros2_ws/install/setup.bash
-  ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=AG2F120S
-  ```
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=rg75
+    ```
+
+  * Switch chassis to Linkhou Q1
+    ```bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=linkhou_rg75
+    ```
+
+  * Jodell RG-75 gripper with FiveAges pad
+    ```bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=rg75
+    ```
+  * Jodell RG-75 gripper with LeapMotor pad
+    ```bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=leapmotor
+    ```
+  * Changingtek AG2F90-C Gripper
+    ```bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 type:=AG2F90-C
+    ```
+
+</details>
 
 ### 2.2 Component
 
@@ -94,28 +98,32 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=fiveages_
   source ~/ros2_ws/install/setup.bash
   ros2 launch ocs2_arm_controller split_body.launch.py robot:=fiveages_w1
   ```
-* Use Jodell Hand
-  ```bash
-  source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 type:=srs_rg75
-  ```
-* Use Jodell Hand with Leapmotor pad
-  ```bash
-  source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 type:=leapmotor
-  ```
 
-* Use Jodell Hand and Linkhou_q1 chassis
-  ```bash
-  source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 type:=linkhou_srs_rg75
-  ```  
+  <details>
+  <summary><strong>More Configs</strong></summary>
 
-* Use Leapmotor pad and Linkhou_q1 chassis
-  ```bash
-  source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=linkhou_leapmotor
-  ```  
+  * Use Jodell Hand
+    ```bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 type:=srs_rg75
+    ```
+  * Use Jodell Hand with Leapmotor pad
+    ```bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 type:=leapmotor
+    ```
+  * Use Jodell Hand and Linkhou_q1 chassis
+    ```bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 type:=linkhou_srs_rg75
+    ```
+  * Use Leapmotor pad and Linkhou_q1 chassis
+    ```bash
+    source ~/ros2_ws/install/setup.bash
+    ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=linkhou_leapmotor
+    ```  
+
+</details>
 
 #### 3.2.2 Gazebo Simulation
 
