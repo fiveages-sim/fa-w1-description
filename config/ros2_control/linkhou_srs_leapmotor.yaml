@@ -1,7 +1,7 @@
 # This config file is used by ros2_control
 controller_manager:
   ros__parameters:
-    update_rate: 50  # Hz
+    update_rate: 1000  # Hz
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -50,10 +50,6 @@ ocs2_arm_controller:
     mpc_frequency: 20
     info_file_name: fixed_base
     joints:
-      - body_joint1
-      - body_joint2
-      - body_joint3
-      - body_joint4
       - left_joint1
       - left_joint2
       - left_joint3
@@ -75,12 +71,12 @@ ocs2_arm_controller:
       - position
 
     robot_name: fiveages_w1
-    robot_type: linkhou_rg75
+    robot_type: linkhou_srs_leapmotor
 
     # Control parameters
-    home_pos: [ 0.529, -1.149, -0.561, 0.017,
-                0.5154526984559645, 1.3329052679448519, -1.5302910847217799, 1.4788674947063893, -0.26114129406217995, 0.476333392045736, 0.0,
-                -0.5154526984559645, 1.2746371675066812, 1.5302910847217799, 1.4788674947063893, 0.26114129406217995, 0.476333392045736, 0.0]
+    home_pos: [ 0.0, 0.0, 0.0, 0.0,
+                0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     rest_pos: [ 0.0, 0.0, 0.0, 0.0,
                 0.0, 1.5708, -1.5708, 0.0, 0.0, 0.0, 0.0,
                 0.0, 1.5708, 1.5708, 0.0, 0.0, 0.0, 0.0 ]
@@ -98,3 +94,4 @@ right_hand_controller:
     joint: right_gripper_joint
     force_feedback_ratio: 0.1
     force_threshold: 1.5
+

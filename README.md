@@ -97,18 +97,18 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=fiveages_
 * Use Jodell Hand
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=rg75
+  ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 type:=srs_rg75
   ```
 * Use Jodell Hand with Leapmotor pad
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=leapmotor
+  ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 type:=leapmotor
   ```
 
 * Use Jodell Hand and Linkhou_q1 chassis
   ```bash
   source ~/ros2_ws/install/setup.bash
-  ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=linkhou_rg75
+  ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 type:=linkhou_srs_rg75
   ```  
 
 * Use Leapmotor pad and Linkhou_q1 chassis
@@ -121,7 +121,7 @@ ros2 launch robot_common_launch manipulator_ocs2.launch.py robot_name:=fiveages_
 
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 hardware:=gz type:=rg75 world:=dart
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 hardware:=gz type:=rg75 world:=dart
 ```
 
 ```bash
@@ -138,7 +138,17 @@ ros2 launch ocs2_arm_controller demo.launch.py robot:=fiveages_w1 type:=leapmoto
 
 ```bash
 source ~/ros2_ws/install/setup.bash
-ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 hardware:=isaac
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 hardware:=isaac type:=linkhou_srs_rg75
+```
+
+```bash
+source ~/ros2_ws/install/setup.bash
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 hardware:=isaac type:=srs_rg75
+```
+
+```bash
+source ~/ros2_ws/install/setup.bash
+ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 hardware:=isaac type:=linkhou_ccs_rg75
 ```
 
 ### 3.3 Real Robot Deploy
