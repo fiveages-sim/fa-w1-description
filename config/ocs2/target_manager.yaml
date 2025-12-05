@@ -12,3 +12,24 @@
     # 是否启用VR输入处理
     enable_vr: false
 
+    # 头部关节映射配置（可选）
+    # 如果配置了，将使用此映射而不是自动检测
+    # 格式：head_rpy_to_joint_mapping.<rpy_name> = <joint_name>
+    # 示例：将RViz marker的RPY角度映射到xacro中的实际关节名称
+    head_rpy_to_joint_mapping:
+      head_yaw: "head_joint1"    # RViz marker的yaw角度对应xacro中的head_joint1
+      head_pitch: "head_joint2"  # RViz marker的pitch角度对应xacro中的head_joint2
+      # head_roll: ""             # 如果不需要roll，可以留空或省略
+
+
+    # 旋转轴方向配置（可选）
+    # 如果旋转轴方向是反的，设置为-1.0，否则为1.0（默认）
+    # 格式：head_rpy_axis_direction.<rpy_name> = 1.0 或 -1.0（必须是浮点数）
+    head_rpy_axis_direction:
+      head_yaw: 1.0      # yaw轴方向：1.0表示正方向，-1.0表示反向
+      head_pitch: -1.0   # pitch轴方向：1.0表示正方向，-1.0表示反向
+      head_roll: 1.0     # roll轴方向：1.0表示正方向，-1.0表示反向
+
+    # 头部link名称配置（可选）
+    # 用于从TF获取头部实际位置，默认为"head_link2"
+    head_link_name: "head_link2"  # 根据实际机器人模型修改

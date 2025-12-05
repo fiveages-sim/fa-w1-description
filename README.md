@@ -180,7 +180,10 @@ ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 hardware:
   ```bash
   ros2 topic pub /body_joint_controller/target_joint_position std_msgs/msg/Float64MultiArray "{data: [0.6810335903307411, -1.5096724218776123, -0.8279494910068607, 0.0]}"  # 设置目标关节角度（弧度）
   ```
-
+* Set Arm Angles
+  ```bash
+  ros2 topic pub /ocs2_arm_controller/target_joint_position std_msgs/msg/Float64MultiArray "{data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0,0.0,0.0]}"  # 设置目标关节角度（弧度）
+  ```
 #### 3.3.1 Launch on Laptop
 
 * Empty Hand (Full Body Control)
