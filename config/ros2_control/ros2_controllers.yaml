@@ -150,7 +150,7 @@ head_joint_controller:
     home_duration: 5.0
     move_duration: 3.0
     hold_position_threshold: 0.1
-    switch_command_base: 4
+    
 
 body_joint_controller:
   ros__parameters:
@@ -177,4 +177,4 @@ body_joint_controller:
     home_duration: 5.0
     move_duration: 3.0
     hold_position_threshold: 0.1
-    switch_command_base: 4
+    
