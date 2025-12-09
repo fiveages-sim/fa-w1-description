@@ -14,12 +14,12 @@
 
     # 头部关节映射配置（可选）
     # 如果配置了，将使用此映射而不是自动检测
-    # 格式：head_rpy_to_joint_mapping.<rpy_name> = <joint_name>
-    # 示例：将RViz marker的RPY角度映射到xacro中的实际关节名称
-    head_rpy_to_joint_mapping:
-      head_yaw: "head_joint1"    # RViz marker的yaw角度对应xacro中的head_joint1
-      head_pitch: "head_joint2"  # RViz marker的pitch角度对应xacro中的head_joint2
-      # head_roll: ""             # 如果不需要roll，可以留空或省略
+    # 格式：head_joint_to_rpy_mapping.<joint_name> = <rpy_name>
+    # 示例：将xacro中的关节名称映射到RViz marker的RPY角度
+    head_joint_to_rpy_mapping:
+      head_joint1: "head_yaw"    # head_joint1 对应 RViz marker 的 yaw 角度
+      head_joint2: "head_pitch"  # head_joint2 对应 RViz marker 的 pitch 角度
+      # head_joint3: "head_roll"  # 如果不需要roll，可以留空或省略
 
 
     # 旋转轴方向配置（可选）
