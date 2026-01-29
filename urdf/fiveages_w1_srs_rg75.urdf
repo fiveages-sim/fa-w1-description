@@ -21,7 +21,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/chassis/base.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/chassis/base.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -64,7 +64,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/chassis/wheel.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/chassis/wheel.glb"/>
       </geometry>
     </visual>
     <collision>
@@ -90,7 +90,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/chassis/wheel.obj" scale="1 -1 1"/>
+        <mesh filename="package://fiveages_w1_description/meshes/chassis/wheel.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
@@ -134,7 +134,7 @@
     </inertial>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/base.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/base.glb"/>
       </geometry>
     </collision>
   </link>
@@ -154,12 +154,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/link1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link1.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/link1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link1.glb"/>
       </geometry>
     </collision>
   </link>
@@ -179,12 +179,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/link2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link2.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/link2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link2.glb"/>
       </geometry>
     </collision>
   </link>
@@ -204,12 +204,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/link3.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link3.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/link3.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link3.glb"/>
       </geometry>
     </collision>
   </link>
@@ -229,12 +229,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/link4.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link4.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/link4.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/link4.glb"/>
       </geometry>
     </collision>
   </link>
@@ -254,12 +254,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/head1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head1.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/head1.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head1.glb"/>
       </geometry>
     </collision>
   </link>
@@ -279,12 +279,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/head2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head2.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://fiveages_w1_description/meshes/body/head2.obj"/>
+        <mesh filename="package://fiveages_w1_description/meshes/body/head2.glb"/>
       </geometry>
     </collision>
   </link>
@@ -321,12 +321,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/base.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/base.glb" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/base.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/base.glb" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -347,12 +347,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.glb" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.glb" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -372,12 +372,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.glb" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.glb" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -398,12 +398,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.glb" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.glb" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -424,12 +424,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.glb" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.glb" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -450,12 +450,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.glb" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.glb" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -475,12 +475,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.glb" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.glb" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -501,7 +501,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link7.obj" scale="1 1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link7.glb" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -520,12 +520,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/base.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/base.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/base.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/base.glb" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -546,12 +546,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link1.glb" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -571,12 +571,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link2.glb" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -597,12 +597,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link3.glb" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -623,12 +623,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link4.glb" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -649,12 +649,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link5.glb" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -674,12 +674,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link6.glb" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -700,7 +700,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://rokae_ar5_description/meshes/srs/link7.obj" scale="1 -1 1"/>
+        <mesh filename="package://rokae_ar5_description/meshes/srs/link7.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
   </link>
@@ -719,12 +719,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/base.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/base.glb"/>
       </geometry>
     </collision>
   </link>
@@ -736,12 +736,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.glb"/>
       </geometry>
     </collision>
   </link>
@@ -757,12 +757,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.glb"/>
       </geometry>
     </collision>
   </link>
@@ -781,12 +781,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.glb" scale="-1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.glb" scale="-1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -806,12 +806,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.glb"/>
       </geometry>
     </collision>
   </link>
@@ -828,12 +828,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.glb" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -856,12 +856,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/base.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/base.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/base.glb"/>
       </geometry>
     </collision>
   </link>
@@ -873,12 +873,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/flange.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/flange.glb"/>
       </geometry>
     </collision>
   </link>
@@ -894,12 +894,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/finger.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.glb"/>
       </geometry>
     </collision>
   </link>
@@ -918,12 +918,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.glb" scale="-1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/finger.obj" scale="-1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/finger.glb" scale="-1 -1 1"/>
       </geometry>
     </collision>
   </link>
@@ -943,12 +943,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.glb"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.glb"/>
       </geometry>
     </collision>
   </link>
@@ -965,12 +965,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.glb" scale="1 -1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.obj" scale="1 -1 1"/>
+        <mesh filename="package://jodell_description/meshes/RG75/pad_fiveages.glb" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>

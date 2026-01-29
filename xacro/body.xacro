@@ -19,7 +19,7 @@
             <xacro:if value="${collider == 'convex'}">
                 <collision>
                     <geometry>
-                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/base.obj"/>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/base.glb"/>
                     </geometry>
                 </collision>
             </xacro:if>
@@ -48,13 +48,13 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link1.obj"/>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link1.glb"/>
                 </geometry>
             </visual>
             <xacro:if value="${collider == 'convex'}">
                 <collision>
                     <geometry>
-                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link1.obj"/>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link1.glb"/>
                     </geometry>
                 </collision>
             </xacro:if>
@@ -83,13 +83,13 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link2.obj"/>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link2.glb"/>
                 </geometry>
             </visual>
             <xacro:if value="${collider == 'convex'}">
                 <collision>
                     <geometry>
-                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link2.obj"/>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link2.glb"/>
                     </geometry>
                 </collision>
             </xacro:if>
@@ -118,13 +118,13 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link3.obj"/>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link3.glb"/>
                 </geometry>
             </visual>
             <xacro:if value="${collider == 'convex'}">
                 <collision>
                     <geometry>
-                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link3.obj"/>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link3.glb"/>
                     </geometry>
                 </collision>
             </xacro:if>
@@ -153,13 +153,13 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link4.obj"/>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link4.glb"/>
                 </geometry>
             </visual>
             <xacro:if value="${collider == 'convex'}">
                 <collision>
                     <geometry>
-                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link4.obj"/>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link4.glb"/>
                     </geometry>
                 </collision>
             </xacro:if>
@@ -196,13 +196,13 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head1.obj"/>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head1.glb"/>
                 </geometry>
             </visual>
             <xacro:if value="${collider == 'convex'}">
                 <collision>
                     <geometry>
-                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head1.obj"/>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head1.glb"/>
                     </geometry>
                 </collision>
             </xacro:if>
@@ -239,13 +239,13 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head2.obj"/>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head2.glb"/>
                 </geometry>
             </visual>
             <xacro:if value="${collider == 'convex'}">
                 <collision>
                     <geometry>
-                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head2.obj"/>
+                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/head2.glb"/>
                     </geometry>
                 </collision>
             </xacro:if>

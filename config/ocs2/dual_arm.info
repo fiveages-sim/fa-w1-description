@@ -111,20 +111,20 @@ initialState
   ; initial state for the arm DOFs
   arm
   {
-    (0,0)   0.0      ; left_joint1
-    (1,0)   0.0      ; left_joint2
-    (2,0)   0.0      ; left_joint3
-    (3,0)   0.0      ; left_joint4
-    (4,0)   0.0      ; left_joint5
-    (5,0)   0.0      ; left_joint6
-    (6,0)   0.0      ; left_joint7
-    (7,0)   0.0      ; right_joint1
-    (8,0)   0.0      ; right_joint2
-    (9,0)   0.0      ; right_joint3
-    (10,0)  0.0      ; right_joint4
-    (11,0)  0.0      ; right_joint5
-    (12,0)  0.0      ; right_joint6
-    (13,0)  0.0      ; right_joint7
+    (0,0)   0.15622096296502086     ; left_joint1
+    (1,0)   1.3238529836625905      ; left_joint2
+    (2,0)   -1.4301957224137667     ; left_joint3
+    (3,0)   1.0916780405656537      ; left_joint4
+    (4,0)   -0.28819400399453565    ; left_joint5
+    (5,0)   0.4850972160345252      ; left_joint6
+    (6,0)   -0.019370582083524043   ; left_joint7
+    (7,0)   -0.2524111457453749     ; right_joint1
+    (8,0)   1.26093480422406        ; right_joint2
+    (9,0)   1.4309639112302         ; right_joint3
+    (10,0)  1.275244008708472       ; right_joint4
+    (11,0)  0.27915478251742143     ; right_joint5
+    (12,0)  0.41046785228139826     ; right_joint6
+    (13,0)  0.003618996236919578    ; right_joint7
   }
 }
 
