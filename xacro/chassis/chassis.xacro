@@ -5,7 +5,13 @@
     <xacro:property name="drive_wheel_height" value="-0.177505"/>
     <xacro:property name="support_wheel_height" value="-0.2252"/>
 
-    <xacro:macro name="Chassis">
+    <xacro:macro name="Chassis" params="joints_movable:=true">
+        <xacro:if value="${joints_movable}">
+            <xacro:property name="wheel_joint_type" value="continuous"/>
+        </xacro:if>
+        <xacro:unless value="${joints_movable}">
+            <xacro:property name="wheel_joint_type" value="fixed"/>
+        </xacro:unless>
 
         <!-- Base Link -->
         <link name="base_footprint"/>
@@ -95,11 +101,13 @@
         </link>
 
         <!-- Left Wheel Joint -->
-        <joint name="chassis_left_joint" type="continuous">
+        <joint name="chassis_left_joint" type="${wheel_joint_type}">
             <origin xyz="-0.041 0.1846 ${drive_wheel_height}"/>
             <parent link="base_link"/>
             <child link="chassis_left_Link"/>
-            <axis xyz="0 1 0"/>
+            <xacro:if value="${joints_movable}">
+                <axis xyz="0 1 0"/>
+            </xacro:if>
         </joint>
 
         <!-- Right Wheel Link -->
@@ -129,11 +137,13 @@
         </link>
 
         <!-- Right Wheel Joint -->
-        <joint name="chassis_right_joint" type="continuous">
+        <joint name="chassis_right_joint" type="${wheel_joint_type}">
             <origin xyz="-0.041 -0.1846 ${drive_wheel_height}"/>
             <parent link="base_link"/>
             <child link="chassis_right_Link"/>
-            <axis xyz="0 1 0"/>
+            <xacro:if value="${joints_movable}">
+                <axis xyz="0 1 0"/>
+            </xacro:if>
         </joint>
 
         <link name="scan"/>

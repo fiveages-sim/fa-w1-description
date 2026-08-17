@@ -6,10 +6,6 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    # 差速驱动控制器 - 用于轮子
-    diff_drive_controller:
-      type: diff_drive_controller/DiffDriveController
-
     # 双臂控制器 - 使用ocs2 arm controller
     ocs2_arm_controller:
       type: ocs2_arm_controller/Ocs2ArmController
@@ -25,27 +21,6 @@ controller_manager:
     # 身体控制器 - 使用basic joint controller
     body_joint_controller:
       type: basic_joint_controller/BasicJointController
-
-# 差速驱动控制器配置
-diff_drive_controller:
-  ros__parameters:
-    update_rate: 50  # Hz
-    
-    # 轮子关节
-    left_wheel_names: ["chassis_left_joint"]
-    right_wheel_names: ["chassis_right_joint"]
-    
-    # 轮子间距
-    wheel_separation: 0.3692  # 左右轮间距 (从URDF计算: 0.1846 - (-0.1846))
-    wheel_radius: 0.0842     # 轮子半径 (从mesh文件推断)
-    
-    # 限制参数
-    linear.x.has_velocity_limits: true
-    linear.x.max_velocity: 1.0
-    angular.z.has_velocity_limits: true
-    angular.z.max_velocity: 5.0
-    enable_odom_tf: false
-
 
 ocs2_arm_controller:
   ros__parameters:
@@ -73,9 +48,9 @@ ocs2_arm_controller:
     state_interfaces:
       - position
 
-    robot_name: rokae_ar5
+    robot_name: ar5_srs
     robot_type: dual
-    info_file_name: dual
+    info_file_name: task
     home_duration: 5.0
 
     # Control parameters

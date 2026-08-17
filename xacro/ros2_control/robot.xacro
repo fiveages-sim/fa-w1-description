@@ -3,13 +3,9 @@
 
 	<xacro:arg name="ros2_control_hardware_type" default="mock_components"/>
 
-
-	<!-- 直接include robot.xacro并根据type参数传递 -->
 	<xacro:include filename="$(find fiveages_w1_description)/xacro/robot.xacro"/>
-
-	<xacro:include filename="$(find rokae_ar5_description)/xacro/ros2_control/interfaces.xacro"/>
+	<xacro:include filename="$(find ar5_ccs_description)/xacro/ros2_control/end_effector_interfaces.xacro"/>
 	<xacro:include filename="$(find fiveages_w1_description)/xacro/ros2_control/body.xacro"/>
-	<xacro:include filename="$(find fiveages_w1_description)/xacro/ros2_control/chassis.xacro"/>
 
 	<xacro:if value="${'$(arg ros2_control_hardware_type)' == 'real'}">
 		<ros2_control name="ar5_left_system" type="system">
@@ -19,16 +15,7 @@
 				<param name="joint_impedance">500,500,500,500,50,50,50</param>
 				<param name="local_ip">192.168.2.100</param>
 			</hardware>
-			<xacro:ar5_interfaces name="left"/>
-			<xacro:if
-					value="${'$(arg type)' == 'rg75' or '$(arg type)' == 'ccs_rg75' or '$(arg type)' == 'srs_rg75' or '$(arg type)' == 'linkhou_rg75' or '$(arg type)' == 'linkhou_ccs_rg75' or '$(arg type)' == 'linkhou_srs_rg75'}">
-				<joint name="left_gripper_joint">
-					<command_interface name="position"/>
-					<state_interface name="position">
-						<param name="initial_value">0</param>
-					</state_interface>
-				</joint>
-			</xacro:if>
+			<xacro:side_arm_ee_block side="left" mode="real" hand_type="${left_hand_type}" gripper_type="${left_gripper_type}"/>
 		</ros2_control>
 		<ros2_control name="ar5_right_system" type="system">
 			<hardware>
@@ -37,16 +24,7 @@
 				<param name="joint_impedance">500,500,500,500,50,50,50</param>
 				<param name="local_ip">192.168.2.100</param>
 			</hardware>
-			<xacro:ar5_interfaces name="right"/>
-			<xacro:if
-					value="${'$(arg type)' == 'rg75' or '$(arg type)' == 'ccs_rg75' or '$(arg type)' == 'srs_rg75' or '$(arg type)' == 'linkhou_rg75' or '$(arg type)' == 'linkhou_ccs_rg75' or '$(arg type)' == 'linkhou_srs_rg75'}">
-				<joint name="right_gripper_joint">
-					<command_interface name="position"/>
-					<state_interface name="position">
-						<param name="initial_value">0</param>
-					</state_interface>
-				</joint>
-			</xacro:if>
+			<xacro:side_arm_ee_block side="right" mode="real" hand_type="${right_hand_type}" gripper_type="${right_gripper_type}"/>
 		</ros2_control>
 
 		<ros2_control name="eyou_body" type="system">
@@ -59,19 +37,9 @@
 				<param name="control_period_ms">4</param>
 				<param name="report_period_ms">100</param>
 				<param name="use_sync">true</param>
-
-				<!-- 每个电机的减速比配置 -->
 				<param name="reduction_ratios">[121.0, 121.0, 121.0, 121.0, 56.0, 36.0]</param>
 			</hardware>
-
 			<xacro:body_interfaces/>
-		</ros2_control>
-
-		<ros2_control name="virtual_system" type="system">
-			<hardware>
-				<plugin>mock_components/GenericSystem</plugin>
-			</hardware>
-			<xacro:chassis_interfaces/>
 		</ros2_control>
 	</xacro:if>
 
@@ -80,19 +48,9 @@
 			<hardware>
 				<plugin>rokae_ros2_control/RokaeHardware</plugin>
 				<param name="arm_ip">192.168.2.160</param>
-				<!--                <param name="joint_impedance">500,500,500,500,50,50,50</param>-->
 				<param name="local_ip">192.168.2.233</param>
 			</hardware>
-			<xacro:ar5_interfaces name="left"/>
-			<xacro:if
-					value="${'$(arg type)' == 'rg75' or '$(arg type)' == 'ccs_rg75' or '$(arg type)' == 'srs_rg75' or '$(arg type)' == 'linkhou_rg75' or '$(arg type)' == 'linkhou_ccs_rg75' or '$(arg type)' == 'linkhou_srs_rg75'}">
-				<joint name="left_gripper_joint">
-					<command_interface name="position"/>
-					<state_interface name="position">
-						<param name="initial_value">0</param>
-					</state_interface>
-				</joint>
-			</xacro:if>
+			<xacro:side_arm_ee_block side="left" mode="real" hand_type="${left_hand_type}" gripper_type="${left_gripper_type}"/>
 		</ros2_control>
 		<ros2_control name="ar5_right_system" type="system">
 			<hardware>
@@ -101,16 +59,7 @@
 				<param name="joint_impedance">500,500,500,500,50,50,50</param>
 				<param name="local_ip">192.168.2.233</param>
 			</hardware>
-			<xacro:ar5_interfaces name="right"/>
-			<xacro:if
-					value="${'$(arg type)' == 'rg75' or '$(arg type)' == 'ccs_rg75' or '$(arg type)' == 'srs_rg75' or '$(arg type)' == 'linkhou_rg75' or '$(arg type)' == 'linkhou_ccs_rg75' or '$(arg type)' == 'linkhou_srs_rg75'}">
-				<joint name="right_gripper_joint">
-					<command_interface name="position"/>
-					<state_interface name="position">
-						<param name="initial_value">0</param>
-					</state_interface>
-				</joint>
-			</xacro:if>
+			<xacro:side_arm_ee_block side="right" mode="real" hand_type="${right_hand_type}" gripper_type="${right_gripper_type}"/>
 		</ros2_control>
 
 		<ros2_control name="eyou_body" type="system">
@@ -123,19 +72,9 @@
 				<param name="control_period_ms">4</param>
 				<param name="report_period_ms">100</param>
 				<param name="use_sync">true</param>
-
-				<!-- 每个电机的减速比配置 -->
 				<param name="reduction_ratios">[121.0, 121.0, 121.0, 121.0, 56.0, 36.0]</param>
 			</hardware>
-
 			<xacro:body_interfaces/>
-		</ros2_control>
-
-		<ros2_control name="virtual_system" type="system">
-			<hardware>
-				<plugin>mock_components/GenericSystem</plugin>
-			</hardware>
-			<xacro:chassis_interfaces/>
 		</ros2_control>
 	</xacro:if>
 
@@ -158,81 +97,20 @@
 					</xacro:if>
 				</hardware>
 
-				<xacro:unless value="${'$(arg ros2_control_hardware_type)' == 'isaac'}">
-					<xacro:chassis_interfaces/>
-				</xacro:unless>
 				<xacro:body_interfaces/>
-				<xacro:ar5_interfaces name="left"/>
-				<xacro:ar5_interfaces name="right"/>
-
-				<xacro:if
-						value="${'$(arg type)' == 'rg75' or '$(arg type)' == 'leapmotor' or '$(arg type)' == 'linkhou_rg75' or '$(arg type)' == 'linkhou_leapmotor' or '$(arg type)' == 'ccs_rg75' or '$(arg type)' == 'ccs_leapmotor' or '$(arg type)' == 'srs_rg75' or '$(arg type)' == 'srs_leapmotor' or '$(arg type)' == 'linkhou_ccs_rg75' or '$(arg type)' == 'linkhou_ccs_leapmotor' or '$(arg type)' == 'linkhou_srs_rg75' or '$(arg type)' == 'linkhou_srs_leapmotor'}">
-					<xacro:include filename="$(find jodell_description)/xacro/ros2_control/RG75-300.xacro"/>
-					<xacro:rg75_interfaces name="left"/>
-					<xacro:rg75_interfaces name="right"/>
-				</xacro:if>
+				<xacro:dual_arm_ee_block mode="sim"/>
 			</ros2_control>
 		</xacro:unless>
 	</xacro:unless>
 
-	<!-- Gazebo plugin configuration -->
 	<xacro:arg name="gazebo" default="false"/>
 	<xacro:if value="$(arg gazebo)">
-		<xacro:property name="ros2_control_config_basename" value="ros2_controllers.yaml"/>
-
-		<!-- Default chassis configurations -->
-		<xacro:if value="${type_arg == 'rg75'}">
-			<xacro:property name="ros2_control_config_basename" value="rg75.yaml"/>
-		</xacro:if>
-
-		<xacro:if value="${type_arg == 'leapmotor'}">
-			<xacro:property name="ros2_control_config_basename" value="leapmotor.yaml"/>
-		</xacro:if>
-
-		<xacro:if value="${type_arg == 'ccs_rg75'}">
-			<xacro:property name="ros2_control_config_basename" value="ccs_rg75.yaml"/>
-		</xacro:if>
-
-		<xacro:if value="${type_arg == 'ccs_leapmotor'}">
-			<xacro:property name="ros2_control_config_basename" value="ccs_leapmotor.yaml"/>
-		</xacro:if>
-
-		<xacro:if value="${type_arg == 'srs_rg75'}">
-			<xacro:property name="ros2_control_config_basename" value="srs_rg75.yaml"/>
-		</xacro:if>
-
-		<xacro:if value="${type_arg == 'srs_leapmotor'}">
-			<xacro:property name="ros2_control_config_basename" value="srs_leapmotor.yaml"/>
-		</xacro:if>
-
-		<!-- Linkhou chassis configurations -->
-		<xacro:if value="${type_arg == 'linkhou_rg75'}">
-			<xacro:property name="ros2_control_config_basename" value="linkhou_rg75.yaml"/>
-		</xacro:if>
-
-		<xacro:if value="${type_arg == 'linkhou_leapmotor'}">
-			<xacro:property name="ros2_control_config_basename" value="linkhou_leapmotor.yaml"/>
-		</xacro:if>
-
-		<xacro:if value="${type_arg == 'linkhou_ccs_rg75'}">
-			<xacro:property name="ros2_control_config_basename" value="linkhou_ccs_rg75.yaml"/>
-		</xacro:if>
-
-		<xacro:if value="${type_arg == 'linkhou_ccs_leapmotor'}">
-			<xacro:property name="ros2_control_config_basename" value="linkhou_ccs_leapmotor.yaml"/>
-		</xacro:if>
-
-		<xacro:if value="${type_arg == 'linkhou_srs_rg75'}">
-			<xacro:property name="ros2_control_config_basename" value="linkhou_srs_rg75.yaml"/>
-		</xacro:if>
-
-		<xacro:if value="${type_arg == 'linkhou_srs_leapmotor'}">
-			<xacro:property name="ros2_control_config_basename" value="linkhou_srs_leapmotor.yaml"/>
-		</xacro:if>
-
 		<gazebo>
 			<plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-				<parameters>$(find fiveages_w1_description)/config/ros2_control/${ros2_control_config_basename}</parameters>
+				<parameters>$(find fiveages_w1_description)/config/ros2_control/ros2_controllers.yaml</parameters>
+				<xacro:if value="${left_gripper_type == 'rg75' or right_gripper_type == 'rg75'}">
+					<parameters>$(find fiveages_w1_description)/config/ros2_control/rg75.yaml</parameters>
+				</xacro:if>
 			</plugin>
 		</gazebo>
 		<xacro:include filename="$(find fiveages_w1_description)/xacro/gazebo.xacro"/>

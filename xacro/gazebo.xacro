@@ -10,15 +10,25 @@
         <maxVel>10.0</maxVel>
     </gazebo>
 
-    <!-- Gazebo friction properties for left wheel -->
+    <!-- Native W1 chassis wheels -->
     <gazebo reference="chassis_left_Link">
         <mu1>1.0</mu1>
         <mu2>1.0</mu2>
         <minDepth>0.0001</minDepth>
     </gazebo>
-
-    <!-- Gazebo friction properties for right wheel -->
     <gazebo reference="chassis_right_Link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <minDepth>0.0001</minDepth>
+    </gazebo>
+
+    <!-- Linkhou Q1 chassis wheels -->
+    <gazebo reference="left_wheel">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <minDepth>0.0001</minDepth>
+    </gazebo>
+    <gazebo reference="right_wheel">
         <mu1>1.0</mu1>
         <mu2>1.0</mu2>
         <minDepth>0.0001</minDepth>

@@ -1,26 +1,67 @@
-<?xml version="1.0" ?>
-<!-- =================================================================================== -->
-<!-- |    Complete Robot Description for Agibot G1                                     | -->
-<!-- |    This file includes the base robot structure and both arms                    | -->
-<!-- =================================================================================== -->
+<?xml version="1.0"?>
+<!--
+  Component-wise description for FiveAges W1, used by
+  robot_common_launch/launch/visualize/component.launch.py
+
+  Supported types (arg "type"):
+    - base (default): chassis selected by chassis:=w1 / linkhou_q1
+    - linkhou_q1: alias for type:=base chassis:=linkhou_q1
+    - upper_body: trunk + head, rooted at base_link
+    - arms: dual AR5 arms on arm_base (arms:=ar5_ccs / ar5_srs)
+-->
 <robot name="FiveAges_W1" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+	<xacro:property name="PI" value="3.1415926535897931"/>
 	<xacro:arg name="type" default="base"/>
+	<xacro:arg name="collider" default="convex"/>
+	<xacro:arg name="chassis" default="w1"/>
+	<xacro:arg name="chassis_joints_movable" default="true"/>
+	<xacro:arg name="arms" default="ar5_srs"/>
 
-	<xacro:if value="${'$(arg type)' == 'base'}">
+	<xacro:if value="${'$(arg type)' == 'base' and '$(arg chassis)' == 'w1'}">
 		<xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/chassis.xacro"/>
-		<xacro:Chassis />
+		<xacro:Chassis joints_movable="$(arg chassis_joints_movable)"/>
 	</xacro:if>
-
+	<xacro:if value="${'$(arg type)' == 'base' and '$(arg chassis)' == 'linkhou_q1'}">
+		<xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/linkhou_q1.xacro"/>
+		<xacro:Chassis joints_movable="$(arg chassis_joints_movable)"/>
+	</xacro:if>
 	<xacro:if value="${'$(arg type)' == 'linkhou_q1'}">
 		<xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/linkhou_q1.xacro"/>
-		<xacro:Chassis />
+		<xacro:Chassis joints_movable="$(arg chassis_joints_movable)"/>
 	</xacro:if>
 
 	<xacro:if value="${'$(arg type)' == 'upper_body'}">
 		<xacro:include filename="$(find fiveages_w1_description)/xacro/body.xacro"/>
 		<link name="base_link"/>
-		<xacro:Body/>
+		<xacro:Body collider="$(arg collider)"/>
+	</xacro:if>
+
+	<xacro:if value="${'$(arg type)' == 'arms'}">
+		<link name="arm_base"/>
+
+		<joint name="left_arm_mount" type="fixed">
+			<parent link="arm_base"/>
+			<child link="left_base_link"/>
+			<origin xyz="0.0 0.12 0" rpy="-${PI/2} ${PI/2} 0"/>
+		</joint>
+
+		<joint name="right_arm_mount" type="fixed">
+			<parent link="arm_base"/>
+			<child link="right_base_link"/>
+			<origin xyz="0.0 -0.12 0" rpy="${PI/2} ${PI/2} 0"/>
+		</joint>
+
+		<xacro:if value="${'$(arg arms)' == 'ar5_ccs'}">
+			<xacro:include filename="$(find ar5_ccs_description)/xacro/arm_ccs.xacro"/>
+			<xacro:AR5_CCS name="left" direction="1" collider="$(arg collider)"/>
+			<xacro:AR5_CCS name="right" direction="-1" collider="$(arg collider)"/>
+		</xacro:if>
+		<xacro:if value="${'$(arg arms)' == 'ar5_srs'}">
+			<xacro:include filename="$(find ar5_srs_description)/xacro/arm_srs.xacro"/>
+			<xacro:Arm name="left" direction="1" collider="$(arg collider)"/>
+			<xacro:Arm name="right" direction="-1" collider="$(arg collider)"/>
+		</xacro:if>
 	</xacro:if>
 
 </robot>

@@ -12,8 +12,10 @@
   <license>BSD</license>
 
   <exec_depend>robot_common_launch</exec_depend>
+  <exec_depend>ar5_ccs_description</exec_depend>
+  <exec_depend>ar5_srs_description</exec_depend>
   <exec_depend>jodell_description</exec_depend>
-  <exec_depend>rokae_ar5_description</exec_depend>
+  <exec_depend>changingtek_description</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
