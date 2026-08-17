@@ -1,6 +1,25 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <!-- Shared by full Body and topology:=dual planning URDF. -->
+    <xacro:macro name="body_link4_collision" params="collider">
+        <xacro:if value="${collider == 'convex'}">
+            <collision>
+                <geometry>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link4.glb"/>
+                </geometry>
+            </collision>
+        </xacro:if>
+        <xacro:if value="${collider == 'simple'}">
+            <collision>
+                <origin xyz="0.0091 0 0.256"/>
+                <geometry>
+                    <box size="0.2509 0.35 0.5029"/>
+                </geometry>
+            </collision>
+        </xacro:if>
+    </xacro:macro>
+
     <xacro:macro name="Body" params="collider:=convex">
 
         <!-- Trunk Base Link -->
@@ -156,21 +175,7 @@
                     <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link4.glb"/>
                 </geometry>
             </visual>
-            <xacro:if value="${collider == 'convex'}">
-                <collision>
-                    <geometry>
-                        <mesh filename="file://$(find fiveages_w1_description)/meshes/body/link4.glb"/>
-                    </geometry>
-                </collision>
-            </xacro:if>
-            <xacro:if value="${collider == 'simple'}">
-                <collision>
-                    <origin xyz="0.0091 0 0.256"/>
-                    <geometry>
-                        <box size="0.2509 0.35 0.5029"/>
-                    </geometry>
-                </collision>
-            </xacro:if>
+            <xacro:body_link4_collision collider="${collider}"/>
         </link>
 
         <joint name="body_joint4" type="revolute">

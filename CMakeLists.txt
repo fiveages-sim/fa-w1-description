@@ -4,7 +4,7 @@ project(fiveages_w1_description)
 find_package(ament_cmake REQUIRED)
 
 install(
-		DIRECTORY meshes xacro config launch
+		DIRECTORY meshes xacro config
 		DESTINATION share/${PROJECT_NAME}/
 )
 

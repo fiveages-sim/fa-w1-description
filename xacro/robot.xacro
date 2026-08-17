@@ -2,7 +2,13 @@
 <robot name="FiveAges W1" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <xacro:property name="PI" value="3.1415926535897931"/>
-    <xacro:arg name="collider" default="convex"/>
+    <!-- topology:
+         full (default) = chassis + body/head + dual AR5
+         dual           = split_body planning URDF (same layout as m6_ccs / WCE3):
+                          empty base_link is the URDF root; arm_base is OCS2 baseFrame
+                          and carries the W1 chest box. Flange ±0.12. -->
+    <xacro:arg name="topology" default="full"/>
+    <xacro:arg name="collider" default="simple"/>
     <!-- Native W1 chassis, or Linkhou Q1. Independent from the dual-arm kit. -->
     <xacro:arg name="chassis" default="w1"/>
     <!-- Same as W2: freeze wheels on the full robot. Component preview defaults to true. -->
@@ -22,6 +28,7 @@
     <xacro:arg name="left_tcp_offset_rpy" default="0 0 0"/>
     <xacro:arg name="right_tcp_offset_xyz" default="0 0 0"/>
     <xacro:arg name="right_tcp_offset_rpy" default="0 0 0"/>
+    <xacro:property name="topology_arg" value="$(arg topology)"/>
     <xacro:property name="type_arg" value="$(arg type)"/>
     <xacro:property name="left_type_arg" value="$(arg left_type)"/>
     <xacro:property name="right_type_arg" value="$(arg right_type)"/>
@@ -36,30 +43,60 @@
     <xacro:property name="selected_gripper_type" value="${left_gripper_type if left_gripper_type == right_gripper_type else ''}"/>
     <xacro:property name="selected_gripper_pad" value="${left_gripper_pad if left_gripper_pad == right_gripper_pad else 'default'}"/>
 
-    <xacro:property name="chassis_arg" value="$(arg chassis)"/>
-    <xacro:if value="${chassis_arg == 'w1'}">
-        <xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/chassis.xacro"/>
-        <xacro:Chassis joints_movable="$(arg chassis_joints_movable)"/>
+    <!-- CCS and SRS share the W1 flange (±0.12), not the CCS pedestal ±0.062. -->
+    <xacro:if value="${topology_arg == 'dual'}">
+        <link name="base_link"/>
+        <!-- body_link4 simple box (origin 0.0091 0 0.256, size 0.2509 0.35 0.5029)
+             expressed in arm_base (body_link4 → arm_base z=+0.41). -->
+        <link name="arm_base">
+            <collision>
+                <origin xyz="0.0091 0 -0.154"/>
+                <geometry>
+                    <box size="0.2509 0.35 0.5029"/>
+                </geometry>
+            </collision>
+        </link>
+        <joint name="arm_base_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="arm_base"/>
+        </joint>
+        <joint name="left_arm_mount" type="fixed">
+            <parent link="arm_base"/>
+            <child link="left_base_link"/>
+            <origin xyz="0.0 0.12 0" rpy="-${PI/2} ${PI/2} 0"/>
+        </joint>
+        <joint name="right_arm_mount" type="fixed">
+            <parent link="arm_base"/>
+            <child link="right_base_link"/>
+            <origin xyz="0.0 -0.12 0" rpy="${PI/2} ${PI/2} 0"/>
+        </joint>
     </xacro:if>
-    <xacro:if value="${chassis_arg == 'linkhou_q1'}">
-        <xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/linkhou_q1.xacro"/>
-        <xacro:Chassis joints_movable="$(arg chassis_joints_movable)"/>
-    </xacro:if>
 
-    <xacro:include filename="$(find fiveages_w1_description)/xacro/body.xacro"/>
-    <xacro:Body collider="$(arg collider)"/>
+    <xacro:unless value="${topology_arg == 'dual'}">
+        <xacro:property name="chassis_arg" value="$(arg chassis)"/>
+        <xacro:if value="${chassis_arg == 'w1'}">
+            <xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/chassis.xacro"/>
+            <xacro:Chassis joints_movable="$(arg chassis_joints_movable)"/>
+        </xacro:if>
+        <xacro:if value="${chassis_arg == 'linkhou_q1'}">
+            <xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/linkhou_q1.xacro"/>
+            <xacro:Chassis joints_movable="$(arg chassis_joints_movable)"/>
+        </xacro:if>
 
-    <joint name="left_arm_mount" type="fixed">
-        <parent link="arm_base"/>
-        <child link="left_base_link"/>
-        <origin xyz="0.0 0.12 0" rpy="-${PI/2} ${PI/2} 0"/>
-    </joint>
+        <xacro:include filename="$(find fiveages_w1_description)/xacro/body.xacro"/>
+        <xacro:Body collider="$(arg collider)"/>
 
-    <joint name="right_arm_mount" type="fixed">
-        <parent link="arm_base"/>
-        <child link="right_base_link"/>
-        <origin xyz="0.0 -0.12 0" rpy="${PI/2} ${PI/2} 0"/>
-    </joint>
+        <joint name="left_arm_mount" type="fixed">
+            <parent link="arm_base"/>
+            <child link="left_base_link"/>
+            <origin xyz="0.0 0.12 0" rpy="-${PI/2} ${PI/2} 0"/>
+        </joint>
+        <joint name="right_arm_mount" type="fixed">
+            <parent link="arm_base"/>
+            <child link="right_base_link"/>
+            <origin xyz="0.0 -0.12 0" rpy="${PI/2} ${PI/2} 0"/>
+        </joint>
+    </xacro:unless>
 
     <xacro:if value="${'$(arg arms)' == 'ar5_ccs'}">
         <xacro:include filename="$(find ar5_ccs_description)/xacro/arm_ccs.xacro"/>

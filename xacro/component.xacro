@@ -45,7 +45,6 @@
 			<child link="left_base_link"/>
 			<origin xyz="0.0 0.12 0" rpy="-${PI/2} ${PI/2} 0"/>
 		</joint>
-
 		<joint name="right_arm_mount" type="fixed">
 			<parent link="arm_base"/>
 			<child link="right_base_link"/>

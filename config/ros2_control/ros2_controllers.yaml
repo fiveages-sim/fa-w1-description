@@ -26,7 +26,7 @@ ocs2_arm_controller:
   ros__parameters:
     # Joint configuration
     update_rate: 100  # Hz
-    mpc_frequency: 25
+    mpc_frequency: 50
     joints:
       - left_joint1
       - left_joint2
@@ -48,9 +48,9 @@ ocs2_arm_controller:
     state_interfaces:
       - position
 
-    robot_name: ar5_srs
+    robot_name: fiveages_w1
     robot_type: dual
-    info_file_name: task
+    info_file_name: dual_arm
     home_duration: 5.0
 
     # Control parameters
@@ -63,7 +63,7 @@ ocs2_wbc_controller:
   ros__parameters:
     # Joint configuration
     update_rate: 100  # Hz
-    mpc_frequency: 25
+    mpc_frequency: 50
     info_file_name: fixed_base
     joints:
       - body_joint1
