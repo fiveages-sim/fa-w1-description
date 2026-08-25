@@ -9,7 +9,7 @@
     - upper_body: trunk + head, rooted at base_link
     - arms: dual AR5 arms on arm_base (arms:=ar5_ccs / ar5_srs)
 -->
-<robot name="FiveAges_W1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="W1" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 	<xacro:property name="PI" value="3.1415926535897931"/>
 	<xacro:arg name="type" default="base"/>
@@ -17,14 +17,15 @@
 	<xacro:arg name="chassis" default="w1"/>
 	<xacro:arg name="chassis_joints_movable" default="true"/>
 	<xacro:arg name="arms" default="ar5_srs"/>
+	<xacro:arg name="isaac" default="true"/>
 
 	<xacro:if value="${'$(arg type)' == 'base' and '$(arg chassis)' == 'w1'}">
 		<xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/chassis.xacro"/>
-		<xacro:Chassis joints_movable="$(arg chassis_joints_movable)"/>
+		<xacro:Chassis joints_movable="$(arg chassis_joints_movable)" isaac="$(arg isaac)"/>
 	</xacro:if>
 	<xacro:if value="${'$(arg type)' == 'base' and '$(arg chassis)' == 'linkhou_q1'}">
 		<xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/linkhou_q1.xacro"/>
-		<xacro:Chassis joints_movable="$(arg chassis_joints_movable)"/>
+		<xacro:Chassis joints_movable="$(arg chassis_joints_movable)"  isaac="$(arg isaac)"/>
 	</xacro:if>
 	<xacro:if value="${'$(arg type)' == 'linkhou_q1'}">
 		<xacro:include filename="$(find fiveages_w1_description)/xacro/chassis/linkhou_q1.xacro"/>

@@ -107,6 +107,7 @@
 	<xacro:if value="$(arg gazebo)">
 		<gazebo>
 			<plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+				<parameters>$(find fiveages_w1_description)/config/ros2_control/common.yaml</parameters>
 				<parameters>$(find fiveages_w1_description)/config/ros2_control/ros2_controllers.yaml</parameters>
 				<xacro:if value="${left_gripper_type == 'rg75' or right_gripper_type == 'rg75'}">
 					<parameters>$(find fiveages_w1_description)/config/ros2_control/rg75.yaml</parameters>

@@ -35,6 +35,11 @@
                         iyz="-0.000166583637729049"
                         izz="0.014637715325779"/>
             </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="file://$(find fiveages_w1_description)/meshes/body/base.glb"/>
+                </geometry>
+            </visual>
             <xacro:if value="${collider == 'convex'}">
                 <collision>
                     <geometry>

@@ -7,7 +7,9 @@
     angular_scale: 0.005
 
     # Split-body RViz / interactive markers: live TF root of the full W1 robot.
+    # full_body launch 在 wbc_available 时会覆盖为 world。
     marker_fixed_frame: base_footprint
+    vr_follow_frame: base_footprint
     # 是否启用VR输入处理
     enable_vr: true
     enable_head_control: false

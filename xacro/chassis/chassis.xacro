@@ -5,7 +5,7 @@
     <xacro:property name="drive_wheel_height" value="-0.177505"/>
     <xacro:property name="support_wheel_height" value="-0.2252"/>
 
-    <xacro:macro name="Chassis" params="joints_movable:=true">
+    <xacro:macro name="Chassis" params="joints_movable:=true isaac:=false">
         <xacro:if value="${joints_movable}">
             <xacro:property name="wheel_joint_type" value="continuous"/>
         </xacro:if>
@@ -165,6 +165,21 @@
             <parent link="base_footprint"/>
             <child link="imu"/>
             <origin xyz="0 0 0.11"/>
+        </joint>
+
+        <link name="lidar_link">
+            <xacro:unless value="${isaac}">
+                <visual>
+                    <geometry>
+                        <mesh filename="file://$(find sensor_models)/meshes/orbbec/ms500.glb"/>
+                    </geometry>
+                </visual>
+            </xacro:unless>
+        </link>
+        <joint name="lidar_joint" type="fixed">
+            <origin xyz="0.24146 0  -0.14599"/>
+            <parent link="base_link"/>
+            <child link="lidar_link"/>
         </joint>
 
 

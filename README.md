@@ -29,7 +29,7 @@ ros2 launch robot_common_launch humanoid.launch.py robot:=fiveages_w1 chassis:=l
 ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1
 ros2 launch ocs2_arm_controller split_body.launch.py robot:=fiveages_w1 arms:=ar5_ccs
 ```
-
+  
 ## 2. 末端执行器
 
 `type` / `left_type` / `right_type` 与 AR5 CCS **同一套键**（解析：`ar5_ccs_description/xacro/eef_type_resolver.xacro`）。
@@ -68,14 +68,19 @@ W1 没有独立的 `variant:=` 槽，也不支持 `ar5_ccs_v2`。独立 AR5 包�
 
 手臂侧接口宏来自 `ar5_ccs_description`：`dual_arm_ee_block` / `side_arm_ee_block`。本包 `xacro/ros2_control/robot.xacro` 为薄封装。
 
-控制器配置：`config/ros2_control/ros2_controllers.yaml`（`ocs2_wbc_controller` 全身、`ocs2_arm_controller` 双臂、`body_joint_controller` / `head_joint_controller`）。
+控制器配置：`config/ros2_control/common.yaml`（`ros2_controllers.yaml` 为 overlay）。
 
-分体规划用本包 `config/ocs2/dual_arm.info`，规划 URDF 为本包 `robot.xacro` + `topology:=dual`（根 `arm_base`，CCS/SRS 法兰都是 ±0.12）。
+| 模式 | 控制器 | 任务文件 | 规划 URDF |
+|------|--------|----------|-----------|
+| 全身 WBC（`full_body`） | `ocs2_wbc_controller`（`Ocs2WbcController`） | `config/ocs2/task.info`（差速 `manipulatorModelType=1`；关节顺序 `[腰×4 \| 左臂×7 \| 右臂×7 \| 头×2]`） | `robot.xacro` `topology:=full`；RViz `config/rviz/fullbody.rviz`（Fixed Frame=`world`） |
+| 分体（`split_body`） | `ocs2_arm_controller` + `body_joint_controller` / `head_joint_controller` | `config/ocs2/dual_arm.info` | `robot.xacro` + `topology:=dual`（根 `arm_base`，CCS/SRS 法兰都是 ±0.12）；RViz `splitbody.rviz`（Fixed Frame=`base_footprint`） |
+
+全身 WBC 把腰/头/双臂放进同一个控制器；底盘是虚拟 SE(2)（轮关节不进 ros2_control）。分体时腰/头仍走 `basic_joint_controller`。
 
 ## 5. 真机部署
 
 ```bash
-colcon build --packages-up-to ocs2_arm_controller basic_joint_controller fiveages_w1_description eyou_ros2_control rokae_ros2_control --symlink-install
+colcon build --packages-up-to ocs2_wbc_controller ocs2_arm_controller basic_joint_controller fiveages_w1_description eyou_ros2_control rokae_ros2_control --symlink-install
 source install/setup.bash
 
 ros2 launch ocs2_arm_controller full_body.launch.py robot:=fiveages_w1 hardware:=real
